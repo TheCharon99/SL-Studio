@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>申聆 — 空间设计</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__inner">
+        <img src="images/logo.png" alt="申聆 logo" class="nav__logo">
+        <span class="nav__brand">申聆</span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__links" id="navLinks">
+        <a href="#about">关于</a>
+        <a href="#services">服务</a>
+        <a href="#portfolio">作品</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" style="background-image: url('images/hero-bg.jpg')"></div>
+      <div class="hero__content">
+        <span class="hero__eyebrow">Interior Designer</span>
+        <h1 class="hero__title">以空间为画布<br>为生活赋予美学</h1>
+        <p class="hero__subtitle">八年深耕住宅与商业空间设计，<br>让每一处细节都服务于生活方式。</p>
+        <a href="#portfolio" class="btn btn--outline">浏览作品</a>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="about" id="about">
+      <div class="container about__grid">
+        <div class="about__image reveal-left">
+          <img src="images/about-me.jpg" alt="设计师肖像" loading="lazy">
+        </div>
+        <div class="about__text reveal-right">
+          <span class="section-label">关于我</span>
+          <h2 class="section-title">设计，是让生活回归本质的过程</h2>
+          <p>我是郭校伸，一名专注于高端住宅与精品商业空间的室内设计师。</p>
+          <p>我相信好的设计不是堆砌元素，而是理解使用者的真实需求——光线如何流动、动线如何自然、材质如何随时间沉淀出温度。每一个项目都是一次与空间、与人深度对话的过程。</p>
+          <div class="about__stats">
+            <div class="stat">
+              <span class="stat__num">8+</span>
+              <span class="stat__label">年经验</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">20+</span>
+              <span class="stat__label">完成项目</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">8</span>
+              <span class="stat__label">设计奖项</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">服务范围</span>
+          <h2 class="section-title">从概念到落地</h2>
+        </div>
+        <div class="services__grid">
+          <div class="service-card reveal">
+            <h3 class="service-card__title">住宅全案设计</h3>
+            <p>从户型规划到软装搭配，为居住者打造完整的生活空间体验。涵盖公寓、别墅、复式等多种住宅类型。</p>
+          </div>
+          <div class="service-card reveal">
+            <h3 class="service-card__title">商业空间设计</h3>
+            <p>将品牌理念融入空间叙事，为餐厅、酒店、办公、零售等业态创造兼具美感与效率的商业环境。</p>
+          </div>
+          <div class="service-card reveal">
+            <h3 class="service-card__title">硬装施工管理</h3>
+            <p>全程跟进施工节点，把控材料选型与工艺细节，确保设计图纸精准还原为现实空间。</p>
+          </div>
+          <div class="service-card reveal">
+            <h3 class="service-card__title">软装陈设搭配</h3>
+            <p>家具、灯具、艺术品、织物的整体选品与陈列方案，为空间注入独特的审美个性。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Portfolio ===== -->
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">精选作品</span>
+          <h2 class="section-title">项目案例</h2>
+        </div>
+        <div class="portfolio__grid">
+          <div class="project reveal" data-project="1">
+            <img src="images/portfolio/project-1.jpg" alt="城市山居" loading="lazy">
+            <div class="project__overlay">
+              <span class="project__loc">上海 · 2024</span>
+              <h3 class="project__title">城市山居</h3>
+            </div>
+          </div>
+          <div class="project reveal" data-project="2">
+            <img src="images/portfolio/project-2.jpg" alt="海边的房子" loading="lazy">
+            <div class="project__overlay">
+              <span class="project__loc">厦门 · 2024</span>
+              <h3 class="project__title">海边的房子</h3>
+            </div>
+          </div>
+          <div class="project reveal" data-project="3">
+            <img src="images/portfolio/project-3.jpg" alt="隐庐茶室" loading="lazy">
+            <div class="project__overlay">
+              <span class="project__loc">杭州 · 2023</span>
+              <h3 class="project__title">隐庐茶室</h3>
+            </div>
+          </div>
+          <div class="project reveal" data-project="4">
+            <img src="images/portfolio/project-4.jpg" alt="光之书房" loading="lazy">
+            <div class="project__overlay">
+              <span class="project__loc">北京 · 2023</span>
+              <h3 class="project__title">光之书房</h3>
+            </div>
+          </div>
+          <div class="project reveal" data-project="5">
+            <img src="images/portfolio/project-5.jpg" alt="素舍" loading="lazy">
+            <div class="project__overlay">
+              <span class="project__loc">成都 · 2023</span>
+              <h3 class="project__title">素舍</h3>
+            </div>
+          </div>
+          <div class="project reveal" data-project="6">
+            <img src="images/portfolio/project-6.jpg" alt="云栖酒店" loading="lazy">
+            <div class="project__overlay">
+              <span class="project__loc">大理 · 2022</span>
+              <h3 class="project__title">云栖酒店</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Project Detail Modal ===== -->
+    <div class="modal" id="projectModal">
+      <div class="modal__backdrop" id="modalBackdrop"></div>
+      <div class="modal__panel">
+        <button class="modal__close" id="modalClose" aria-label="关闭">✕</button>
+        <div class="modal__content">
+          <img class="modal__image" id="modalImage" src="" alt="">
+          <div class="modal__info">
+            <span class="section-label" id="modalLoc"></span>
+            <h2 class="section-title" id="modalTitle"></h2>
+            <p class="modal__desc" id="modalDesc"></p>
+            <dl class="modal__meta">
+              <div class="meta-item">
+                <dt>面积</dt>
+                <dd id="modalArea"></dd>
+              </div>
+              <div class="meta-item">
+                <dt>风格</dt>
+                <dd id="modalStyle"></dd>
+              </div>
+              <div class="meta-item">
+                <dt>年份</dt>
+                <dd id="modalYear"></dd>
+              </div>
+              <div class="meta-item">
+                <dt>类型</dt>
+                <dd id="modalType"></dd>
+              </div>
+              <div class="meta-item">
+                <dt>费用</dt>
+                <dd id="modalCost"></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Contact ===== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">联系我</span>
+          <h2 class="section-title">开启对话</h2>
+          <p class="contact__intro">无论是住宅改造还是商业空间项目，欢迎通过下方表单与我取得联系。</p>
+        </div>
+        <form class="contact__form" action="https://formsubmit.co/your@email.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <div class="form-row">
+            <div class="form-group reveal">
+              <label for="name">申聆</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group reveal">
+              <label for="email">1364008473@qq.com</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form-group reveal">
+            <label for="project-type">项目类型</label>
+            <select id="project-type" name="project-type">
+              <option value="">请选择</option>
+              <option value="residential">住宅设计</option>
+              <option value="commercial">商业空间</option>
+              <option value="soft">软装搭配</option>
+              <option value="other">其他</option>
+            </select>
+          </div>
+          <div class="form-group reveal">
+            <label for="message">项目描述</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="form-group form-group--submit reveal">
+            <button type="submit" class="btn btn--filled">发送消息</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 申聆空间设计工作室</p>
+      <div class="footer__social">
+        <a href="#" aria-label="微信">微信</a>
+        <a href="#" aria-label="小红书">小红书</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
