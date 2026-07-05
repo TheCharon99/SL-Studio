@@ -486,6 +486,40 @@ a {
   color: var(--color-white);
 }
 
+.project--coming {
+  position: relative;
+}
+
+.project--coming img {
+  filter: brightness(0.5) saturate(0.3);
+}
+
+.project--coming .project__overlay {
+  opacity: 1;
+  background: rgba(26, 26, 26, 0.6);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.project--coming .project__title {
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+}
+
+.project--coming .project__loc {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3em 0.8em;
+  border-radius: var(--radius);
+  margin-bottom: 0.8rem;
+}
+
 /* ========================================
    Contact
    ======================================== */
