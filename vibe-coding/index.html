@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            padding: 20px 30px;
+            border-bottom: 1px solid #222;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo { color: #7c3aed; font-weight: 700; font-size: 18px; }
+        .tag { font-size: 12px; color: #666; background: #1a1a1a; padding: 4px 10px; border-radius: 12px; }
+
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px;
+            gap: 20px;
+        }
+
+        .input-area {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .input-area textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #e0e0e0;
+            font-size: 16px;
+            line-height: 1.6;
+            resize: none;
+            outline: none;
+            min-height: 100px;
+        }
+        .input-area textarea::placeholder { color: #555; }
+        .input-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #222;
+        }
+        .hint { font-size: 13px; color: #555; }
+
+        .btn-group { display: flex; gap: 10px; }
+        .btn {
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn:disabled { background: #333 !important; color: #666 !important; cursor: not-allowed; transform: none; }
+        .btn-demo { background: #7c3aed; }
+        .btn-demo:hover { background: #6d28d9; transform: translateY(-1px); }
+        .btn-ai { background: #1a1a1a; border: 1px solid #2a2a2a; color: #aaa; }
+        .btn-ai:hover { border-color: #7c3aed; color: #7c3aed; }
+
+        .model-select {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            color: #aaa;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            outline: none;
+            cursor: pointer;
+        }
+        .model-select option { background: #1a1a1a; }
+
+        .output-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            flex: 1;
+            min-height: 450px;
+        }
+
+        .panel {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .panel-header {
+            padding: 14px 20px;
+            border-bottom: 1px solid #222;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #888;
+        }
+        .panel-header .dot { width: 8px; height: 8px; border-radius: 50%; }
+        .code-dot { background: #7c3aed; }
+        .preview-dot { background: #10b981; }
+        .panel-body {
+            flex: 1;
+            padding: 20px;
+            overflow: auto;
+            position: relative;
+        }
+
+        .code-content {
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #a5b4fc;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .code-content .keyword { color: #c084fc; }
+        .code-content .string { color: #34d399; }
+        .code-content .comment { color: #555; }
+        .code-content .func { color: #60a5fa; }
+
+        .preview-content {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+        }
+        .preview-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #fff;
+            border-radius: 8px;
+        }
+        .preview-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #7c3aed;
+        }
+        .loading .bar {
+            width: 40px;
+            height: 4px;
+            background: #222;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .loading .bar::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 100%;
+            background: #7c3aec;
+            animation: loading 1s infinite;
+        }
+        @keyframes loading {
+            0% { transform: translateX(-20px); }
+            100% { transform: translateX(40px); }
+        }
+
+        .examples {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .example-btn {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            color: #888;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .example-btn:hover {
+            border-color: #7c3aed;
+            color: #7c3aed;
+        }
+
+        .copy-btn {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            color: #888;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-left: auto;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover { border-color: #7c3aed; color: #7c3aed; }
+
+        .error-msg {
+            color: #ef4444;
+            font-size: 13px;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .tag-demo { font-size: 11px; color: #10b981; background: rgba(16,185,129,0.15); padding: 2px 8px; border-radius: 8px; }
+        .tag-ai { font-size: 11px; color: #7c3aed; background: rgba(124,58,237,0.15); padding: 2px 8px; border-radius: 8px; }
+
+        @media (max-width: 700px) {
+            .output-area { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">⚡ Vibe Coding</div>
+        <div class="tag">AI-Assisted Dev</div>
+    </header>
+
+    <div class="main">
+        <div class="input-area">
+            <textarea id="idea" placeholder="描述你想做的东西...&#10;比如：做一个计算器、一个待办清单、一个动画效果"></textarea>
+            <div class="examples">
+                <button class="example-btn" onclick="setExample('计数器')">计数器</button>
+                <button class="example-btn" onclick="setExample('待办清单')">待办清单</button>
+                <button class="example-btn" onclick="setExample('圆形动画')">圆形动画</button>
+                <button class="example-btn" onclick="setExample('颜色切换')">颜色切换</button>
+                <button class="example-btn" onclick="setExample('番茄钟')">番茄钟</button>
+                <button class="example-btn" onclick="setExample('天气卡片')">天气卡片</button>
+            </div>
+            <div class="input-footer">
+                <span class="hint">按 Enter 快速演示 · 或选 AI 生成</span>
+                <div class="btn-group">
+                    <select class="model-select" id="model-select">
+                        <option value="agnes-2.5-pro">AI: Pro</option>
+                        <option value="agnes-2.5-flash">AI: Flash</option>
+                    </select>
+                    <button class="btn btn-ai" id="ai-btn" onclick="generateWithAI()">✨ AI 生成</button>
+                    <button class="btn btn-demo" id="demo-btn" onclick="generateDemo()">运行演示 →</button>
+                </div>
+            </div>
+            <div class="error-msg" id="error-msg"></div>
+        </div>
+
+        <div class="output-area">
+            <div class="panel">
+                <div class="panel-header">
+                    <span class="dot code-dot"></span>
+                    <span id="code-label">生成的代码</span>
+                    <button class="copy-btn" id="copy-btn" onclick="copyCode()" style="display:none">复制</button>
+                </div>
+                <div class="panel-body">
+                    <div class="code-content" id="code-output">
+                        <span style="color:#555">// 你的代码会显示在这里...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <span class="dot preview-dot"></span>
+                    预览效果
+                </div>
+                <div class="panel-body">
+                    <div class="preview-content" id="preview-output">
+                        <span class="preview-placeholder">// 效果预览区</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
