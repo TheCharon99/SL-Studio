@@ -7,13 +7,23 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     name: Deploy to Cloudflare Pages
     steps:
       - uses: actions/checkout@v4
+      - name: Setup build output
+        run: |
+          mkdir -p dist/css dist/js dist/images
+          cp *.html CNAME netlify.toml vercel.json dist/ 2>/dev/null || true
+          cp css/* dist/css/
+          cp js/* dist/js/
+          cp -r images/* dist/images/
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           wranglerVersion: '3'
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy --project-name=sl-studio .
+          command: pages deploy dist --project-name=sl-studio
