@@ -7,15 +7,13 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
     name: Deploy to Cloudflare Pages
     steps:
       - uses: actions/checkout@v4
-      - uses: cloudflare/pages-action@v1
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          projectName: sl-studio
-          workingDir: .
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
           wranglerVersion: '3'
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy --project-name=sl-studio .
