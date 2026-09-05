@@ -1,0 +1,1 @@
+- [Vibe Coding 项目进度](vibe-coding-项目进度.md) — AI 辅助代码生成，已接入 agnes-ai API，待部署 Pages

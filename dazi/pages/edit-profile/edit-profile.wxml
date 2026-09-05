@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="section">
+    <view class="section-title">头像</view>
+    <view class="avatar-edit">
+      <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+        <image class="avatar" src="{{userInfo ? userInfo.avatarUrl : ''}}" mode="aspectFill" wx:if="{{userInfo}}" />
+        <text class="avatar-placeholder" wx:else>👤</text>
+        <text class="avatar-hint">点击更换</text>
+      </button>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">基本信息</view>
+    <view class="form-item">
+      <text class="label">昵称</text>
+      <input class="input" placeholder="请输入昵称" value="{{nickName}}" bindinput="onNickNameInput" maxlength="20" />
+    </view>
+    <view class="form-item">
+      <text class="label">性别</text>
+      <view class="gender-selector">
+        <view class="gender-btn {{gender === 0 ? 'active' : ''}}" bindtap="toggleGender" data-gender="0">保密</view>
+        <view class="gender-btn {{gender === 1 ? 'active' : ''}}" bindtap="toggleGender" data-gender="1">男</view>
+        <view class="gender-btn {{gender === 2 ? 'active' : ''}}" bindtap="toggleGender" data-gender="2">女</view>
+      </view>
+    </view>
+    <view class="form-item">
+      <text class="label">城市</text>
+      <input class="input" placeholder="请输入所在城市" value="{{city}}" bindinput="onCityInput" maxlength="20" />
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">个人简介</view>
+    <view class="form-item">
+      <textarea class="textarea" placeholder="介绍一下自己吧..." value="{{bio}}" bindinput="onBioInput" maxlength="100" />
+      <text class="char-count">{{bio.length}}/100</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">兴趣爱好</view>
+    <view class="interests">
+      <view wx:for="{{['美食', '运动', '电影', '音乐', '旅行', '读书', '艺术', '咖啡', '健身', '摄影']}}" 
+            wx:key="*this" 
+            class="interest-tag {{interests.indexOf(item) !== -1 ? 'selected' : ''}}"
+            bindtap="toggleInterest"
+            data-interest="{{item}}">
+        {{item}}
+      </view>
+    </view>
+  </view>
+
+  <view class="save-section">
+    <button class="save-btn" bindtap="saveProfile" loading="{{saving}}" disabled="{{saving}}">保存资料</button>
+    <button class="cancel-btn" bindtap="cancel">取消</button>
+  </view>
+</view>

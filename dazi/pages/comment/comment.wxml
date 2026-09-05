@@ -1,0 +1,67 @@
+<view class="container">
+  <view class="header">
+    <text class="title">💬 活动讨论</text>
+    <text class="subtitle">{{activityTitle}}</text>
+  </view>
+
+  <view class="input-section">
+    <view class="input-box">
+      <textarea 
+        class="comment-input" 
+        placeholder="说说你的想法..." 
+        value="{{commentText}}"
+        bindinput="onCommentInput"
+        maxlength="200"
+      />
+      <view class="input-footer">
+        <text class="char-count">{{commentText.length}}/200</text>
+        <button class="submit-btn" bindtap="submitComment" loading="{{submitting}}" disabled="{{submitting}}">发布</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="comments-list">
+    <view wx:for="{{comments}}" wx:key="id" class="comment-item">
+      <view class="comment-header">
+        <text class="comment-avatar">{{item.avatar}}</text>
+        <view class="comment-info">
+          <text class="comment-name">{{item.user}}</text>
+          <text class="comment-time">{{item.time}}</text>
+        </view>
+      </view>
+      <view class="comment-content">{{item.content}}</view>
+      
+      <view class="replies" wx:if="{{item.replies && item.replies.length > 0}}">
+        <view wx:for="{{item.replies}}" wx:key="id" class="reply-item">
+          <text class="reply-avatar">{{item.avatar}}</text>
+          <view class="reply-content">
+            <text class="reply-name">{{item.user}}</text>
+            <text class="reply-text">{{item.content}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="comment-actions">
+        <view class="action-btn" data-id="{{item.id}}" bindtap="likeComment">
+          <text class="action-icon">{{item.liked ? '❤️' : '🤍'}}</text>
+          <text class="action-text">{{item.likes || 0}}</text>
+        </view>
+        <view class="action-btn" data-id="{{item.id}}" bindtap="toggleReply">
+          <text class="action-icon">💬</text>
+          <text class="action-text">回复</text>
+        </view>
+      </view>
+
+      <view class="reply-input" wx:if="{{replyTo === item.id}}">
+        <input class="reply-textinput" placeholder="回复{{item.user}}..." value="{{replyText}}" bindinput="onReplyInput" />
+        <button class="reply-submit" data-comment-id="{{item.id}}" bindtap="submitReply">发送</button>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{comments.length === 0}}" class="empty">
+    <text class="empty-icon">💭</text>
+    <text class="empty-text">暂无评论</text>
+    <text class="empty-hint">快来发表第一条评论吧</text>
+  </view>
+</view>

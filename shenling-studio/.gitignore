@@ -1,17 +1,8 @@
-# Git repositories
-.yier-studio/.git
-**/.git
+# 新增的仓库
+shenling-studio/
 
-# Backup folders
-_backup/
-_备份*/
-_old/
-.backup/
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

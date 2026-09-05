@@ -1,0 +1,345 @@
+#me1{ display:block;}
+#me2{ display:none}
+@media screen and (max-width: 960px) {
+
+	body{width:100%;}
+	/*首页*/
+	#me1{ display:block;}
+	#me2{ display:none}
+	.recent-projects-list{width:70% !important;margin:auto !important;float: auto !important;}
+	#desc{width:20%;padding-left: 10px;}
+	.lines{width: 91% !important;}
+	.lines:after{border-top: 0px !important;}
+	.lines span{padding-left: 10px;}
+	
+	/*关于我们*/
+	#left_about{width:23% !important;padding-left: 10px;}
+	#middle ,#middle_sy{width:74% !important;padding-right: 10px;}
+	#dates{width: 20% !important;padding-right: 4px;}
+	#timeline #issues{width: 70%;}
+	
+	#csr_img{}
+	#csr{width:55% !important;margin-left: 15px !important;}
+	
+	/*项目精选*/
+	#left{width:20%  !important;padding-left: 15px;}
+	#page_title{}
+	#content{width: 75% !important;padding-left: 0px !important;}
+	#pro_btns{width: 94%;margin: auto;}
+	#proj{border:none; width: 94%;height: auto !important;overflow-x: hidden;}
+	.pro-right{width:94% !important;height: auto !important;}
+	.imchange{margin: auto !important;}
+	.pro-left{float: none !important;}
+	
+	#imggray ul{padding-left: 30px !important;}
+	
+	.news{width:100% !important;margin: auto;}
+	.news img{width:100%;}
+	#news_left{float: none !important;width: 100%;width:95% !important;margin: auto !important;}
+	#news_left img{text-align: center;}
+	#news_time{padding-left:10px;width: auto;float: none;}
+	#news_time li{padding-right: 0px;}
+	#news_desc{border-left: none;width: 100%;text-align: left;margin-left: -10px;}
+	#search{display: none;}
+	.r_nav_title{display: none;}
+	#news_right ul{display: none;}
+	#right_nav ul{display: block; padding-left:10px !important;}
+	
+	#right_nav{border: none;padding-top: 0px;}
+	#news_right{padding-top: 0px !important;width: auto !important; float:none;}
+	
+	#news_right li{background: none;float: left;}
+	
+
+	
+	.button{font-size: 12px !important;}
+	
+	#nav{height:auto;padding-bottom:100px;}
+	#horizontal-menu-container.nav-top, #horizontal-menu-container.nav-bottom {
+		padding-bottom: 25px;
+		margin-bottom: 0;
+	}
+	.block{}
+	
+	
+	.projects{width:100% !important; }
+	.projects li{margin-right: 20px !important;}
+
+	#new_content img{width: 100%;height: auto;}
+
+
+	.ser_logo{width: 187px;padding-bottom: 30px;}
+	.ser_desc{width: 50%;}
+	
+	/*contact us*/
+	.f_text{float:none !important; width:100% !important;}
+	.f_text input{width:100% !important;}
+	.f_textarea textarea{ width:100% !important;}
+	#f_left{float:none;width:80%  !important;margin-left:10%;margin-right:10%;}
+	#f_right{float:none;width:80%  !important; margin-left:10%;margin-right:10%;}
+	#add{padding-left:0px !important; border-left:none !important;}
+	#ser_content{width:70% !important;}
+	#map{display:none;}
+	#f_mess{float:none !important;width:100% !important;}
+	#f_textarea{float:none !important;}
+	#sub_btn{margin-left:0px !important;}
+	/*lightbox*/
+	#lightbox-image{width:100% !important;height:auto !important;}
+	#lightbox-container-image-box{width:100% !important;height:auto !important;}
+	
+	.ser_logo{width:187px !important;}
+	.ser_desc{width:50% !important;}
+	#lightbox-container-image-data-box{width:auto !important;width:auto\9;}
+	#lightbox-nav a{height:100% !important;height:100%\9}
+
+}
+
+@media screen and (max-width: 800px) {
+	#content{width: 70% !important;padding-left: 0px !important;}
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media screen and (max-width: 768px) {
+	body{width:100%;overflow-x: hidden !important;}
+	/*首页*/
+	#me1{ display:none;}
+	#me2{ display:block;margin-top: -33px;}
+	.recent-projects-list{width:70% !important;margin:auto !important;float:none !important;}
+	.lines span{padding-left: 0px;}
+	
+	
+	
+	#nav{height:auto;padding-bottom:100px;}
+	/*头部*/
+	.select-bav{width: 88% !important;}
+	#line{width:94%;margin-left:auto; margin-right:auto;}
+	.content{margin-top: 10px !important;}
+	
+	/*关于我们*/
+	#left_about{width:30%;}
+	#left_about ul{padding-left: 13px !important;}
+	#middle {width:70% !important;height: auto !important; }
+	#csr_img{width:100% !important;text-align: center;}
+	#csr_img img{width:100%;height: auto !important;}
+	#csr{width:100% !important;margin-left: 5px !important;border-left: 0px !important;padding-left: 0px !important;}
+	#middle_sy{width: 65% !important;}
+	
+	#slider{width:94% !important;}
+	.separator{width:93% !important;padding-left:22px;}
+		
+	#slider-container {
+		display:none;
+	}
+	#desc{padding-left: 20px;}
+	#horizontal-menu-container.nav-top, #horizontal-menu-container.nav-bottom {padding-bottom: 25px;border-bottom: 1px solid #ededed;margin-bottom: 0;}
+
+	.left .lines::after { display:none;}
+	#logo{text-align:center;}
+	
+	#left{width:200px; padding-left:20px;}
+	
+	#news_left{width:94% !important; margin-left:10px; margin-left:25px; margin-top:0px  !important; }
+	#news_left img{width: 100% !important;}
+	
+	
+	/*项目精选*/
+	.projects{width:500px !important;}
+	.projects li{margin-right: 20px !important; }
+	#timeline #issues{width: 390px;}
+	#page_title{margin-left:15px !important; width:94%; padding-right:0px !important;}
+	.img_wrapper{}
+	
+	#proj{border:none; width: 94%;height: auto !important;overflow-x: hidden;}
+	.pro-right{width:94% !important; height: auto !important;} 
+	.imchange{margin: auto !important;}
+	.pro-left{float: none !important;}
+	#imggray ul{padding-left: 0px !important;margin-top: 0px !important;}
+	
+	/*新闻资讯*/
+	.news{height: auto;}
+	#news_time{padding-left:10px;width: auto;float: none;}
+	#news_time li{padding-right: 0px;}
+	#news_desc{border-left: none;width: 100%;}
+	#search{display: none;}
+	.r_nav_title{display: none;}
+	#news_right ul{display: none;}
+	#right_nav ul{display: block; padding-left:10px !important;}
+	
+	#right_nav{border: none;padding-top: 0px;}
+	#news_right{padding-top: 0px !important;width: auto !important;}
+	
+	#news_right li{background: none;float: left;}
+	/*底部*/
+	#footer{width:94% !important; margin:auto; margin-top:10px !important;}
+	
+	/*contact us*/
+	.f_text{float:none !important; width:100% !important;}
+	.f_text input{width:100% !important;}
+	.f_textarea textarea{ width:100% !important;}
+	#f_left{float:none;width:80%  !important;margin-left:10%;margin-right:10%;}
+	#f_right{float:none;width:80%  !important; margin-left:10%;margin-right:10%;}
+	
+	#gallery{}
+	#map{display:none;}
+	
+	/*lightbox*/
+	#lightbox-image{width:100% !important;height:auto !important;}
+	#lightbox-container-image-box{width:100% !important;height:auto !important;}
+		
+	#media{width: 94% !important;margin: auto;}
+	
+
+}
+
+@media screen and (max-width: 640px) {
+
+	/*首页*/
+	#me1{ display:none;}
+	#me2{ display:block;margin-top: 0px !important;}
+	#logo{text-align:center  !important;padding: 20px 50px 0px 50px  !important ;}
+	body{width:100% !important; overflow-x:hidden !important; overflow-y: auto !important}
+	.recent-projects-list{width: 75% !important;}
+	.lines span{padding-left: 0px !important;}
+	.select-bav{width: 87% !important;margin-top: 20px !important;}
+	/*关于我们*/
+	#middle{width:65% !important;overflow: none;padding-right: 4px;}
+	#left_about{width:30% !important;padding-left: 4px;}
+	#csr_img{width:100% !important;text-align: center;}
+	#csr_img img{width:100%;height: auto !important;}
+	#csr{width:100% !important;margin-left: 5px !important;border-left: 0px !important;padding-left: 0px !important;}
+
+
+	#left_desc{padding:0px 10px 30px 10px !important;width: 93% !important;}
+	.server{margin-top: 20px !important;}
+	.ser_logo{margin:0px auto !important;float: none !important;}
+	.ser_desc{margin: 0px auto !important;float: none !important;}
+	/*xiangmujingxuan*/
+	#content{ float: none !important;width:auto !important;margin-left: 0px !important;padding-top:0px !important;}
+
+
+	#nav{height:auto;padding-bottom:100px;}
+	#slider-container {
+		display:none;
+	}
+	#horizontal-menu-container.nav-top, #horizontal-menu-container.nav-bottom {padding-bottom: 25px;border-bottom: 1px solid #ededed;margin-bottom: 0;}
+	.block{}
+
+	.left .lines::after { display:none;}
+	#desc{display: none;}
+	#desc_640{display: block !important;padding:0px 12px;}
+
+	
+	
+	#news_left{width:94% !important;margin-left:10px  !important;padding-right:0px !important;}
+	#news_left img{width:94%;height:auto;}
+	.projects{width:210px !important;padding-left:auto !important;margin: 15px auto; float: none;}
+	.projects li{}
+	#timeline #issues{width: 140px;}
+	#timeline #issues li.box{height: auto;}
+	#csr{margin-left: 0px !important;width: auto !important;height: auto !important;margin-bottom: 30px;}
+	#dates{display: none;}
+	#timeline #issues{width: auto;}
+	#timeline{height: auto  !important;}
+	#proj{border: none;height: auto !important;}
+	.pro-left{float: none !important;width: 300px !important;display: none;}
+	.pro-right{float: none !important; height: auto !important;}
+	#left{width: 96% !important;float: none;padding-left:10px  !important; }
+	#xm_desc{display:block !important;padding:10px; color:#666666; display:none;}
+	#xm_desc li{padding-bottom:30px;border-bottom:1px solid #ededed;}
+	#left ul{ padding-left:0px;}
+	#left li{float:left;}
+	#jxxm{display:none;}
+	#khfw{ display:none;}
+	#kkk{display:block !important;}
+	.block1{ margin-left:auto; margin-right:auto;}
+	.block1 li{}
+	.line_ds{ display:block;padding:0px 4px;float:left; color:#999999;}
+	.pro-left ul{padding:0px;}
+	.pro-left li img{width: 290px;height: 210px !important;}
+	#s_r{left: 150px  !important;}
+	.pro-right{width: 94% !important;margin-left: 23px;margin-right: 23px;}
+	#proj{width: 100% !important;}
+	#imggray li{width: 300px !important;height: 220px !important;margin: auto !important;float: none !important;}
+	#imggray img{width: 300px !important; height: 220px !important;}
+	.img_wrapper{width: 300px !important;height: 220px !important;}
+	#s_l{top:-150px !important;}
+	#s_r{top:-150px !important;}
+	.imchange{height: 230px !important;}
+	#pro_btns{line-height: auto !important;}
+	
+	.news img{width: 100% !important;}
+	#page_title{padding-left:0px !important;}
+	
+	
+	/*新闻资讯*/
+	.news{height: auto;}
+	#news_time{padding-left:10px;width: auto;float: none;}
+	#news_time li{padding-left: 10px;}
+	#news_desc{border-left: none;width: 100%;}
+	#search{display: none;}
+	.r_nav_title{display: none;}
+	#news_right ul{display: none;}
+	#right_nav ul{display: block;}
+	
+	#right_nav{border: none;padding-top: 0px;}
+	#news_right{padding-top: 0px !important;width: auto !important;}
+	
+	#news_right li{background: none;float: left;}
+	
+	/*事业机会*/
+	#news_left img{width: 100% !important;}
+	#middle{height: auto !important;margin: auto !important;}
+	
+	#timeline #issues li.box{padding-top: 10px;}
+	#list_sy{width: 60% !important;}
+	#gallery{}
+	#ser_content{
+		margin-top:0px !important; 
+		width:95% !important;
+		margin-left:auto !important;
+		float:none !important;
+		
+	}
+	#ser_content ul{padding:0px auto 0px auto !important;}
+	
+	#map{display:none;}
+	
+	
+	/*lightbox*/
+	#lightbox-image{width:100% !important;height:auto !important;}
+	#lightbox-container-image-box{width:100% !important;height:auto !important;}
+	
+	.ser_logo{width:187px !important; float:none !important;}
+	.ser_desc{width:100% !important; float:none !important; padding-left:0px !important;}
+	.server{margin-top:0px !important;}
+	
+	#nav_m{display:block !important;}
+	#issues{height:auto !important;}
+	
+	.ser_div{clear:both;}
+	
+
+#media{width: 94% !important;margin: auto;}
+	
+}
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media screen and (max-width: 480px) {
+	.select-bav{width: 87% !important;margin-top: 19px !important;}
+	.pro-right{width:90% !important;}
+	#ser_content ul{padding:auto !important;}
+	#map{display:none;}
+	
+	/*lightbox*/
+	#lightbox-image{width:100% !important;height:auto !important;}
+	#lightbox-container-image-box{width:100% !important;height:auto !important;}
+	
+	#page_title{margin-left:10px !important;}
+	#left_desc{}
+	#content{width:100% !important;}
+	.img_wrapper{width:100% !important;}
+	.img_wrapper img{width:100% !important;}
+	#gallery{margin-left:0px !important;}
+}

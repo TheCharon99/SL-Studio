@@ -1,0 +1,73 @@
+<view class="container">
+  <view class="header">
+    <text class="title">⭐ 活动评价</text>
+    <text class="subtitle">{{activityName}}</text>
+  </view>
+
+  <view class="rating-section">
+    <view class="rating-label">总体评分</view>
+    <view class="stars">
+      <text 
+        wx:for="{{[1,2,3,4,5]}}" 
+        wx:key="*this"
+        class="star {{item <= rating ? 'filled' : ''}}"
+        bindtap="setRating"
+        data-rating="{{item}}"
+      >★</text>
+    </view>
+    <text class="rating-text" wx:if="{{rating > 0}}">{{rating === 1 ? '很差' : rating === 2 ? '较差' : rating === 3 ? '一般' : rating === 4 ? '不错' : '很棒'}}</text>
+  </view>
+
+  <view class="review-section">
+    <view class="review-label">评价内容</view>
+    <textarea 
+      class="review-textarea" 
+      placeholder="分享你的活动体验，帮助更多人选择..."
+      value="{{comment}}"
+      bindinput="onCommentInput"
+      maxlength="200"
+    />
+    <text class="char-count">{{comment.length}}/200</text>
+  </view>
+
+  <view class="tags-section">
+    <view class="tags-label">选择标签</view>
+    <view class="tag-list">
+      <view 
+        wx:for="{{['准时', '热情', '有趣', '专业', '友好', '场地好', '氛围好']}}" 
+        wx:key="*this"
+        class="tag {{tagSelected.indexOf(item) !== -1 ? 'selected' : ''}}"
+        bindtap="toggleTag"
+        data-tag="{{item}}"
+      >{{item}}</view>
+    </view>
+  </view>
+
+  <view class="submit-section">
+    <button class="submit-btn" bindtap="submitReview" loading="{{submitting}}" disabled="{{submitting}}">
+      提交评价
+    </button>
+  </view>
+
+  <view class="history-section" wx:if="{{reviews.length > 0}}">
+    <view class="section-title">历史评价 ({{reviews.length}})</view>
+    <view class="review-list">
+      <view wx:for="{{reviews}}" wx:key="id" class="review-item">
+        <view class="review-header">
+          <text class="review-avatar">{{item.avatar}}</text>
+          <view class="review-info">
+            <text class="review-name">{{item.user}}</text>
+            <view class="review-stars">
+              <text wx:for="{{[1,2,3,4,5]}}" wx:key="*this" class="star small {{item <= item.rating ? 'filled' : ''}}">★</text>
+            </view>
+          </view>
+          <text class="review-time">{{item.time}}</text>
+        </view>
+        <view class="review-tags" wx:if="{{item.tags && item.tags.length > 0}}">
+          <text wx:for="{{item.tags}}" wx:key="*this" class="review-tag">{{item}}</text>
+        </view>
+        <text class="review-content">{{item.comment}}</text>
+      </view>
+    </view>
+  </view>
+</view>

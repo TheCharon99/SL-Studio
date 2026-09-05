@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>客服测试</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; }
+    .container { max-width: 600px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 20px; }
+    .header { text-align: center; margin-bottom: 20px; }
+    .header h1 { color: #333; }
+    .messages { height: 400px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; }
+    .message { margin-bottom: 10px; padding: 10px; border-radius: 8px; }
+    .message.user { background: #007bff; color: #fff; text-align: right; }
+    .message.bot { background: #e9ecef; color: #333; }
+    .input-area { display: flex; gap: 10px; }
+    .input-area input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
+    .input-area button { padding: 10px 20px; background: #007bff; color: #fff; border: none; border-radius: 8px; cursor: pointer; }
+    .quick-btns { margin-bottom: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .quick-btns button { padding: 8px 12px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 20px; cursor: pointer; font-size: 12px; }
+    .quick-btns button:hover { background: #e9ecef; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🤖 智能客服测试</h1>
+      <p style="color: #666; margin-top: 8px;">输入问题或点击快捷按钮</p>
+    </div>
+    
+    <div class="quick-btns">
+      <button onclick="sendQuick('我的订单什么时候发货？')">📦 订单发货</button>
+      <button onclick="sendQuick('我想申请退款')">💰 申请退款</button>
+      <button onclick="sendQuick('物流信息异常')">🚚 物流问题</button>
+      <button onclick="sendQuick('我要投诉')">⚠️ 我要投诉</button>
+      <button onclick="sendQuick('转人工客服')">👤 转人工</button>
+    </div>
+    
+    <div class="messages" id="messages"></div>
+    
+    <div class="input-area">
+      <input type="text" id="input" placeholder="输入您的问题..." onkeypress="if(event.key==='Enter')sendMessage()">
+      <button onclick="sendMessage()">发送</button>
+    </div>
+  </div>
+  
+  <script>
+    // FAQ 知识库
+    const faqs = [
+      { question: '我的订单什么时候发货？', answer: '您的订单将在付款后 1-2 个工作日内发货。', keywords: ['订单', '发货', '物流', '快递'] },
+      { question: '如何申请退款？', answer: '退款流程：1.进入订单 2.点击申请退款 3.填写原因 4.提交申请。退款3-7天到账。', keywords: ['退款', '退货', '取消'] },
+      { question: '物流信息显示异常怎么办？', answer: '如果物流长时间未更新，建议等待24小时，如仍无更新可联系人工客服。', keywords: ['物流', '异常', '未更新'] },
+      { question: '你们支持哪些支付方式？', answer: '支持：微信支付、支付宝、银行卡、Apple Pay、花呗分期。', keywords: ['支付', '付款', '微信', '支付宝'] },
+      { question: '商品有质量问题怎么办？', answer: '如遇质量问题，请保留包装并拍照，在订单页面申请退换货，我们承担运费。', keywords: ['质量', '问题', '瑕疵', '损坏'] },
+      { question: '你们的营业时间是什么？', answer: '人工客服：工作日9:00-21:00，周末10:00-20:00。智能客服7×24小时在线。', keywords: ['营业时间', '客服时间', '工作时间'] },
+      { question: '如何修改收货地址？', answer: '订单未发货可直接在详情页修改；已发货需联系快递转寄。', keywords: ['地址', '收货地址', '修改地址'] },
+      { question: '你们发什么快递？', answer: '合作快递：顺丰、京东物流、圆通、中通。系统根据地址自动分配。', keywords: ['快递', '顺丰', '物流', '发货'] }
+    ];
+    
+    const messages = document.getElementById('messages');
+    const input = document.getElementById('input');
+    
+    function addMessage(text, isUser) {
+      const div = document.createElement('div');
+      div.className = 'message ' + (isUser ? 'user' : 'bot');
+      div.textContent = text;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+    
+    function findFAQ(question) {
+      let bestMatch = null;
+      let bestScore = 0;
+      
+      faqs.forEach(faq => {
+        let score = 0;
+        faq.keywords.forEach(kw => {
+          if (question.includes(kw)) score += 1;
+        });
+        if (score > bestScore) {
+          bestScore = score;
+          bestMatch = faq;
+        }
+      });
+      
+      return bestScore > 0 ? bestMatch : null;
+    }
+    
+    function getReply(question) {
+      if (question.includes('投诉') || question.includes('差评') || question.includes('不满意')) {
+        return '我理解您的心情，这个问题需要特殊处理。让我为您转接人工客服，他们会尽快为您解决。';
+      }
+      
+      if (question.includes('人工') || question.includes('客服')) {
+        return '好的，我已经为您创建了加急工单，人工客服会在30分钟内联系您。';
+      }
+      
+      const match = findFAQ(question);
+      if (match) {
+        return '根据您的咨询：' + match.answer;
+      }
+      
+      return '抱歉，我没有找到相关信息。您可以重新描述问题，或点击"转人工"联系客服。';
+    }
+    
+    function sendMessage() {
+      const text = input.value.trim();
+      if (!text) return;
+      
+      addMessage(text, true);
+      input.value = '';
+      
+      setTimeout(() => {
+        const reply = getReply(text);
+        addMessage(reply, false);
+      }, 500);
+    }
+    
+    function sendQuick(text) {
+      input.value = text;
+      sendMessage();
+    }
+    
+    // 欢迎消息
+    setTimeout(() => {
+      addMessage('您好！我是智能客服助手，可以帮您解答订单、退款、物流等问题。', false);
+    }, 300);
+  </script>
+</body>
+</html>

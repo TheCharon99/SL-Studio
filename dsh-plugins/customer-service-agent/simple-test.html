@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>客服测试</title></head>
+<body>
+  <h2>🤖 智能客服测试</h2>
+  <p>点击按钮测试回复：</p>
+  <button onclick="test1()">订单发货</button>
+  <button onclick="test2()">申请退款</button>
+  <button onclick="test3()">我要投诉</button>
+  <div id="result" style="margin-top:20px;padding:10px;background:#f0f0f0;"></div>
+  
+  <script>
+    function test1() {
+      document.getElementById('result').innerHTML = '✅ 您的订单将在付款后 1-2 个工作日内发货。';
+    }
+    function test2() {
+      document.getElementById('result').innerHTML = '✅ 退款流程：1.进入订单 2.点击申请退款 3.填写原因 4.提交申请。3-7天到账。';
+    }
+    function test3() {
+      document.getElementById('result').innerHTML = '⚠️ 我理解您的心情，让我为您转接人工客服...';
+    }
+  </script>
+</body>
+</html>

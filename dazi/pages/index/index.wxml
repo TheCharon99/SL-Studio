@@ -1,0 +1,78 @@
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <text class="logo">🤝</text>
+    <text class="title">找搭子</text>
+    <text class="subtitle">找人一起做事，不再孤单</text>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <text class="search-icon">🔍</text>
+    <input id="searchInput" class="search-input" placeholder="搜索活动、地点、标签..." value="{{searchKeyword}}" bindinput="onSearchInput" confirm-type="search" />
+    <text class="search-clear" wx:if="{{searchKeyword}}" bindtap="clearSearch">×</text>
+  </view>
+
+  <!-- 搜索历史 -->
+  <view class="search-history" wx:if="{{!searchKeyword && searchHistory.length > 0}}">
+    <text class="history-title">📜 搜索历史</text>
+    <view class="history-tags">
+      <text wx:for="{{searchHistory}}" wx:key="*this" class="history-tag" bindtap="onSearchHistoryTap" data-value="{{item}}">{{item}}</text>
+    </view>
+    <text class="clear-all" bindtap="clearHistory">清除</text>
+  </view>
+
+  <!-- 搜索结果提示 -->
+  <view class="search-tip" wx:if="{{searchKeyword}}">
+    <text>找到 {{filteredActivities.length}} 个相关活动</text>
+    <text class="clear-btn" bindtap="clearSearch">清除</text>
+  </view>
+
+  <!-- 分类标签 -->
+  <scroll-view class="category-scroll" scroll-x>
+    <view class="category-list">
+      <view wx:for="{{categories}}" wx:key="*this" class="category-item {{currentCategory === item ? 'active' : ''}}" bindtap="switchCategory" data-id="{{item}}">{{item}}</view>
+      <view class="category-item calendar-link" bindtap="goToCalendar">📅 日历</view>
+    </view>
+  </scroll-view>
+
+  <!-- 活动列表 -->
+  <view class="activity-list">
+    <view wx:for="{{filteredActivities || activities}}" wx:key="id" class="activity-card">
+      <view class="card-header">
+        <text class="avatar">{{item.emoji}}</text>
+        <view class="user-info">
+          <text class="username">{{item.username}}</text>
+          <text class="location">{{item.location}}</text>
+        </view>
+        <view class="type-tag">{{item.type}}</view>
+      </view>
+      
+      <view class="card-content">
+        <text class="activity-title">{{item.title}}</text>
+        <view class="activity-meta">
+          <text class="time">🕐 {{item.time}}</text>
+          <text class="people">👥 {{item.people}}</text>
+        </view>
+      </view>
+
+      <view class="card-footer">
+        <view class="tags">
+          <text wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this" class="tag">{{tag}}</text>
+        </view>
+        <button class="join-btn" data-id="{{item.id}}" bindtap="goToDetail">加入</button>
+      </view>
+      <!-- 收藏按钮 -->
+      <view class="favorite-btn {{item.favorited ? 'favorited' : ''}}" data-id="{{item.id}}" bindtap="toggleFavorite">
+        {{item.favorited ? '❤️' : '🤍'}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:if="{{emptyList}}" class="empty-state">
+    <text class="empty-icon">🔍</text>
+    <text class="empty-text">没有找到相关活动</text>
+    <text class="empty-hint">换个关键词试试</text>
+  </view>
+</view>

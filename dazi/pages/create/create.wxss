@@ -1,0 +1,123 @@
+/* 发布活动样式 - 参考"粗门"设计 */
+.container {
+  min-height: 100vh;
+  background: #fafafa;
+  padding-bottom: 40rpx;
+}
+
+.header {
+  padding: 40rpx 30rpx 30rpx;
+  background: #00C853;
+  color: #fff;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 700;
+  display: block;
+}
+
+.subtitle {
+  font-size: 26rpx;
+  opacity: 0.9;
+  margin-top: 8rpx;
+  display: block;
+}
+
+/* 表单区块 */
+.section {
+  margin: 20rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+/* 输入框 */
+.form-item {
+  margin-bottom: 24rpx;
+}
+
+.form-item:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 12rpx;
+  display: block;
+}
+
+.input {
+  width: 100%;
+  height: 88rpx;
+  background: #f5f5f5;
+  border-radius: 16rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 160rpx;
+  background: #f5f5f5;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+/* 类型选择 */
+.type-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.type-item {
+  padding: 16rpx 32rpx;
+  background: #f5f5f5;
+  border-radius: 24rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.type-item.selected {
+  background: #E8F5E9;
+  color: #00C853;
+  border: 2rpx solid #00C853;
+}
+
+/* 发布按钮 */
+.publish-section {
+  padding: 0 24rpx;
+  margin-top: 30rpx;
+}
+
+.publish-btn {
+  width: 100%;
+  height: 96rpx;
+  background: #00C853;
+  color: #fff;
+  border-radius: 48rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  border: none;
+}
+
+.publish-btn[disabled] {
+  opacity: 0.6;
+}
+
+.publish-btn::after {
+  border: none;
+}

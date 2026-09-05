@@ -1,0 +1,84 @@
+<view class="container">
+  <!-- 顶部用户信息 -->
+  <view class="header">
+    <view class="avatar-wrapper" wx:if="{{isLoggedIn}}">
+      <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    </view>
+    <view class="avatar-wrapper" wx:else>
+      <text class="avatar">👤</text>
+    </view>
+    <view class="info">
+      <text class="name">{{userInfo ? userInfo.nickName : '未登录'}}</text>
+      <text class="sub">{{isLoggedIn ? '欢迎来到找搭子' : '登录后解锁更多功能'}}</text>
+    </view>
+  </view>
+
+  <!-- 统计数据 -->
+  <view class="stats">
+    <view class="stat">
+      <text class="num">{{stats.acts}}</text>
+      <text class="label">发起</text>
+    </view>
+    <view class="stat">
+      <text class="num">{{stats.joined}}</text>
+      <text class="label">参与</text>
+    </view>
+    <view class="stat">
+      <text class="num">{{stats.dazi}}</text>
+      <text class="label">搭子</text>
+    </view>
+  </view>
+
+  <!-- 菜单列表 -->
+  <view class="menu">
+    <view class="item" bindtap="navToMessage">
+      <text class="icon">📬</text>
+      <text>消息</text>
+      <text class="badge" wx:if="{{unreadCount > 0}}">{{unreadCount}}</text>
+      <text class="arrow">›</text>
+    </view>
+    <view class="item" bindtap="navToMyActivities">
+      <text class="icon">📋</text>
+      <text>我的活动</text>
+      <text class="arrow">›</text>
+    </view>
+    <view class="item" bindtap="navToMyPublished">
+      <text class="icon">📝</text>
+      <text>我发布的</text>
+      <text class="arrow">›</text>
+    </view>
+    <view class="item" bindtap="navToFavorites">
+      <text class="icon">❤️</text>
+      <text>我的收藏</text>
+      <text class="arrow">›</text>
+    </view>
+    <view class="item" bindtap="navToSettings">
+      <text class="icon">⚙️</text>
+      <text>设置</text>
+      <text class="arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 登录按钮 -->
+  <view class="login-section" wx:if="{{!isLoggedIn}}">
+    <view class="form-group">
+      <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+        <text class="icon">👤</text> 选择头像
+      </button>
+      <input class="nick-input" type="nickname" placeholder="请输入昵称" bindinput="onNicknameInput" />
+    </view>
+    <button class="login-btn" bindtap="oneKeyLogin">微信一键登录</button>
+  </view>
+
+  <!-- 退出登录 -->
+  <view class="logout-section" wx:if="{{isLoggedIn}}">
+    <button class="logout-btn" bindtap="logout">退出登录</button>
+  </view>
+
+  <!-- 邀请按钮 -->
+  <view class="invite-section" wx:if="{{isLoggedIn}}">
+    <button class="invite-btn" open-type="share">
+      邀请好友
+    </button>
+  </view>
+</view>

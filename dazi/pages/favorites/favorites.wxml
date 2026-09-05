@@ -1,0 +1,33 @@
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <text class="title">❤️ 我的收藏</text>
+    <text class="subtitle">{{favorites.length}} 个收藏</text>
+  </view>
+
+  <!-- 收藏列表 -->
+  <view class="list" wx:if="{{favorites.length > 0}}">
+    <view wx:for="{{favorites}}" wx:key="id" class="item" bindtap="goToDetail" data-id="{{item.id}}">
+      <view class="item-header">
+        <text class="item-emoji">{{item.emoji}}</text>
+        <view class="item-info">
+          <text class="item-title">{{item.title}}</text>
+          <text class="item-location">{{item.location}}</text>
+        </view>
+        <view class="item-type">{{item.type}}</view>
+      </view>
+      <view class="item-footer">
+        <text class="item-time">🕐 {{item.time}}</text>
+        <text class="item-people">👥 {{item.people}}</text>
+        <view class="unfavorite-btn" catchtap="toggleFavorite" data-id="{{item.id}}">取消</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view wx:if="{{favorites.length === 0}}" class="empty">
+    <text class="empty-icon">💝</text>
+    <text class="empty-text">还没有收藏</text>
+    <text class="empty-hint">去发现页收藏你感兴趣的活动吧</text>
+  </view>
+</view>

@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermes Skills 分类大全</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --accent: #58a6ff;
+            --green: #238636;
+            --purple: #8957e5;
+            --orange: #d29922;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 32px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .header .stats {
+            color: #8b949e;
+            font-size: 14px;
+        }
+        .category {
+            margin-bottom: 40px;
+        }
+        .category-title {
+            font-size: 20px;
+            color: var(--accent);
+            padding: 10px 15px;
+            background: rgba(88,166,255,0.1);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 15px;
+        }
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 18px;
+            transition: all 0.2s;
+        }
+        .skill-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .skill-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .skill-desc {
+            font-size: 13px;
+            color: #8b949e;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .skill-meta {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        .badge-source { background: #21262d; color: #8b949e; }
+        .badge-freq-high { background: var(--green); color: #fff; }
+        .badge-freq-med { background: var(--orange); color: #fff; }
+        .badge-freq-low { background: #30363d; color: #8b949e; }
+        .badge-type { background: rgba(137,87,229,0.2); color: var(--purple); }
+        .usage-box {
+            background: #0d1117;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 12px;
+            font-size: 12px;
+        }
+        .usage-box h4 {
+            color: var(--accent);
+            margin-bottom: 6px;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+        .usage-box ul {
+            padding-left: 16px;
+            color: #8b949e;
+        }
+        .usage-box li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🛠️ Hermes Agent Skills 分类大全</h1>
+        <div class="stats">共 111 个 Skills · 72 内置 · 39 社区 · 更新于 2026-08-24</div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🤖 自主 Agent 框架</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">hermes-agent</div>
+                <div class="skill-desc">Hermes Agent 核心技能：配置、主题、多 Agent 编排、CLI 命令、网关设置</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">核心</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>首次配置 Hermes</li>
+                        <li>切换主题/皮肤</li>
+                        <li>配置多模型提供商</li>
+                        <li>设置网关和会话</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">computer-use</div>
+                <div class="skill-desc">后台驱动 Windows 桌面，无需抢占焦点。支持截图、鼠标、键盘、滚动操作</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">自动化</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>自动化操作桌面应用</li>
+                        <li>批量处理文件</li>
+                        <li>截图分析</li>
+                        <li>不需要用户干预的任务</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">claude-code</div>
+                <div class="skill-desc">委托编码任务到 Claude Code CLI，支持 PR、代码审查、分支管理</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">编码</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>创建 Pull Request</li>
+                        <li>代码审查</li>
+                        <li>分支管理</li>
+                        <li>大型重构任务</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">codex</div>
+                <div class="skill-desc">委托编码任务到 OpenAI Codex CLI，支持代码生成和审查</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">编码</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>OpenAI 模型编码任务</li>
+                        <li>代码生成</li>
+                        <li>与 Codex CLI 集成</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">opencode</div>
+                <div class="skill-desc">委托编码到 OpenCode CLI，支持 PR 审查和功能开发</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">编码</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">merge-reconciler</div>
+                <div class="skill-desc">中立第三方解决 Agent 合并冲突，自动分析冲突并推荐解决方案</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">Git</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>多 Agent 并行开发冲突</li>
+                        <li>自动解决 Git 合并冲突</li>
+                        <li>代码整合</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">💻 软件开发</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">test-driven-development</div>
+                <div class="skill-desc">强制 TDD 工作流：先写测试（RED）→ 实现功能（GREEN）→ 重构（REFACTOR）</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">Superpowers</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">TDD</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>新功能开发</li>
+                        <li>代码重构</li>
+                        <li>确保测试覆盖率</li>
+                        <li>防止回归错误</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">systematic-debugging</div>
+                <div class="skill-desc">四阶段系统化调试：理解问题 → 复现 → 隔离 → 修复验证</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置/Superpowers</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">调试</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>复杂 Bug 排查</li>
+                        <li>定位根本原因</li>
+                        <li>避免盲目尝试修复</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">writing-plans</div>
+                <div class="skill-desc">在编码前先生成结构化计划文档，明确步骤和依赖关系</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">Superpowers</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">规划</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>大型功能开发</li>
+                        <li>多步骤任务</li>
+                        <li>团队协作项目</li>
+                        <li>避免盲目写代码</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">brainstorming</div>
+                <div class="skill-desc">结构化头脑风暴：拆解需求、生成方案、评估选项</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">Superpowers</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">规划</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>需求不明确时</li>
+                        <li>技术方案选型</li>
+                        <li>产品功能设计</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">requesting-code-review</div>
+                <div class="skill-desc">完成功能后自动生成代码审查请求，附带上下文和审查要点</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">Superpowers</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">审查</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>功能开发完成</li>
+                        <li>代码质量检查</li>
+                        <li>安全审查</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">subagent-driven-development</div>
+                <div class="skill-desc">将复杂任务拆分为子 Agent 并行执行，提高效率</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置/Superpowers</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">并行</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>大型项目重构</li>
+                        <li>多模块并行开发</li>
+                        <li>独立子任务分配</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">spike</div>
+                <div class="skill-desc">快速原型验证：在正式开发前验证技术可行性</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">验证</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>技术选型验证</li>
+                        <li>概念证明</li>
+                        <li>风险评估</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">plan</div>
+                <div class="skill-desc">生成 Markdown 计划文档，不执行，仅作为参考</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">规划</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">simplify-code</div>
+                <div class="skill-desc">并行 4-Agent 代码清理：去除冗余、统一风格、优化结构</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">重构</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>代码重构</li>
+                        <li>技术债清理</li>
+                        <li>统一代码风格</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">dogfood</div>
+                <div class="skill-desc">探索性 QA：自动发现网页应用的 Bug 并生成报告</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">测试</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>网站功能测试</li>
+                        <li>UI 问题发现</li>
+                        <li>兼容性检查</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">node-inspect-debugger</div>
+                <div class="skill-desc">Node.js 调试：通过 --inspect + Chrome DevTools 协议调试</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">调试</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">nextjs-prisma-debugging</div>
+                <div class="skill-desc">Next.js + Prisma/SQLite 调试：Windows 环境问题排查</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">调试</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🎨 创意与设计</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">architecture-diagram</div>
+                <div class="skill-desc">生成深色主题 SVG 架构图、云架构图、网络图</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">设计</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>系统架构图</li>
+                        <li>网络拓扑图</li>
+                        <li>技术文档配图</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">excalidraw</div>
+                <div class="skill-desc">生成手绘风格 Excalidraw JSON 图表（架构、流程图、序列图）</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">设计</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>快速原型图</li>
+                        <li>会议白板图</li>
+                        <li>流程说明图</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">sketch</div>
+                <div class="skill-desc">快速 HTML 原型：2-3 个设计变体对比</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">原型</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>设计快速验证</li>
+                        <li>多方案对比</li>
+                        <li>客户提案</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">popular-web-designs</div>
+                <div class="skill-desc">54 种真实设计系统参考（Stripe、Linear、Vercel 等）</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">参考</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>设计灵感</li>
+                        <li>竞品分析</li>
+                        <li>UI 风格参考</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">claude-design</div>
+                <div class="skill-desc">设计一次性 HTML 产物（落地页、演示稿、原型）</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">设计</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>产品落地页</li>
+                        <li>演示文稿</li>
+                        <li>交互原型</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">pretext</div>
+                <div class="skill-desc">创建无 DOM 的创意浏览器演示（纯文本布局）</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">创意</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">manim-video</div>
+                <div class="skill-desc">生成 Manim CE 动画：3Blue1Brown 风格的数学/算法视频</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">视频</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>教学视频</li>
+                        <li>算法可视化</li>
+                        <li>数学演示</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">ascii-art</div>
+                <div class="skill-desc">ASCII 艺术生成：pyfiglet、cowsay、图片转 ASCII</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">趣味</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">ascii-video</div>
+                <div class="skill-desc">ASCII 视频：将视频/音频转换为彩色 ASCII MP4/GIF</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">趣味</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">p5js</div>
+                <div class="skill-desc">p5.js 交互艺术：生成艺术、着色器、3D 可视化</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">创意</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">humanizer</div>
+                <div class="skill-desc">去除 AI 写作痕迹：让文本更自然、更像人写</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">内容</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>博客文章润色</li>
+                        <li>邮件草稿优化</li>
+                        <li>社交文案</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">design-md</div>
+                <div class="skill-desc">Google DESIGN.md 规范：验证和导出设计令牌规范文件</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">规范</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">touchdesigner-mcp</div>
+                <div class="skill-desc">通过 MCP 控制 TouchDesigner，生成创意视觉</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">创意</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">📊 生产力工具</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">docx</div>
+                <div class="skill-desc">Word 文档创建、读取、编辑、模板填充和审查</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">文档</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">pdf</div>
+                <div class="skill-desc">PDF 创建、读取、合并、填写表单和加密</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">文档</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">xlsx</div>
+                <div class="skill-desc">Excel 工作簿和 CSV 文件创建、读取、编辑</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">数据</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">powerpoint</div>
+                <div class="skill-desc">PowerPoint 演示文稿创建、读取、编辑（python-pptx）</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">演示</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">notion</div>
+                <div class="skill-desc">Notion API 集成：页面、数据库、Markdown 内容、Workers</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">协作</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">airtable</div>
+                <div class="skill-desc">Airtable REST API：记录 CRUD、筛选、upsert 操作</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">数据库</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">google-workspace</div>
+                <div class="skill-desc">Gmail、日历、Drive、Docs、Sheets 集成</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">办公</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">box</div>
+                <div class="skill-desc">Box 云存储：文件管理、分享、搜索、元数据</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">存储</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">maps</div>
+                <div class="skill-desc">地理编码、POI 搜索、路线规划、时区查询</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">地图</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">nano-pdf</div>
+                <div class="skill-desc">通过自然语言提示编辑现有 PDF 文本内容</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">PDF</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">ocr-and-documents</div>
+                <div class="skill-desc">PDF/扫描件 OCR 文字提取（pymupdf、marker-pdf）</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">OCR</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">document-to-action-items</div>
+                <div class="skill-desc">从文档中提取待办事项、截止日期和责任人</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">提取</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">meeting-action-items</div>
+                <div class="skill-desc">将会议记录转为结构化待办：决策、负责人、工单</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">会议</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">product-price-monitor</div>
+                <div class="skill-desc">监控商品价格、机票、电商列表，达到目标价时提醒</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">监控</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">session-librarian</div>
+                <div class="skill-desc">按提示组织会话：查找、重命名、归档、清理</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">管理</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">teams-meeting-pipeline</div>
+                <div class="skill-desc">Teams 会议摘要、任务重放、Graph 订阅</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">会议</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">weekly-review-planning</div>
+                <div class="skill-desc">每周重置：承诺事项、停滞工作、下周计划</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">规划</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🔍 研究与信息</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">arxiv</div>
+                <div class="skill-desc">arXiv 论文搜索：关键词、作者、分类、ID 检索</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">学术</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">llm-wiki</div>
+                <div class="skill-desc">Karpathy LLM Wiki：构建可查询的互联 Markdown 知识库</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">知识</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">grounded-citations</div>
+                <div class="skill-desc">引用可验证来源：答案和文档附带来源链接</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">引用</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">blogwatcher</div>
+                <div class="skill-desc">RSS/Atom 博客监控：检测新文章并生成摘要</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">监控</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">competitor-news-monitor</div>
+                <div class="skill-desc">监控指定公司动态：新闻聚合、摘要生成</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">监控</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">blocked-page-recovery</div>
+                <div class="skill-desc">恢复被屏蔽/付费墙/WAF 拦截的页面内容</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">恢复</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">polymarket</div>
+                <div class="skill-desc">Polymarket 预测市场查询：市场、价格、订单簿、历史</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">数据</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">💻 GitHub 与版本控制</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">github-auth</div>
+                <div class="skill-desc">GitHub 认证设置：HTTPS Token、SSH 密钥、gh CLI 登录</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">认证</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">github-repo-management</div>
+                <div class="skill-desc">仓库管理：克隆、创建、Fork、远程管理、版本发布</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">管理</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">github-pr-workflow</div>
+                <div class="skill-desc">PR 完整流程：分支、提交、创建、CI、合并</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">流程</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">github-issues</div>
+                <div class="skill-desc">Issue 管理：创建、分类、标签、指派</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">管理</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">github-issue-to-pr</div>
+                <div class="skill-desc">从 Issue 到 PR：完整的 Issue 跟踪到 PR 提交流程</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">流程</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">github-code-review</div>
+                <div class="skill-desc">PR 代码审查：Diff 分析、行内评论、GitHub API</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">审查</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">codebase-inspection</div>
+                <div class="skill-desc">代码库检查：LOC 统计、语言分布、代码比率分析</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">分析</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">📧 邮件</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">himalaya</div>
+                <div class="skill-desc">终端邮件客户端：IMAP/SMTP 支持，命令行收发邮件</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">邮件</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">email-inbox-triage</div>
+                <div class="skill-desc">收件箱整理：优先级排序、草稿回复、邮件分类</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">整理</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>每日邮件整理</li>
+                        <li>优先处理重要邮件</li>
+                        <li>自动生成回复草稿</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🎬 媒体与内容</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">youtube-content</div>
+                <div class="skill-desc">YouTube 字幕提取：转摘要、线程、博客文章</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">内容</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>视频转文字</li>
+                        <li>内容摘要</li>
+                        <li>教程整理</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">gif-search</div>
+                <div class="skill-desc">Tenor GIF 搜索/下载：通过 curl + jq 获取动图</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">媒体</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">songsee</div>
+                <div class="skill-desc">音频频谱分析：Mel 特征、音高、MFCC 提取</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">音频</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🏠 智能家居</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">openhue</div>
+                <div class="skill-desc">Philips Hue 灯光控制：场景、房间、颜色、亮度调节</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">IoT</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🧠 笔记与知识管理</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">obsidian</div>
+                <div class="skill-desc">Obsidian 笔记库操作：读取、搜索、创建、编辑笔记</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">知识</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>笔记检索</li>
+                        <li>知识整理</li>
+                        <li>内容创作</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🤖 AI/ML 工具</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">huggingface-hub</div>
+                <div class="skill-desc">HuggingFace CLI：搜索/下载/上传模型和数据集</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">模型</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">llama-cpp</div>
+                <div class="skill-desc">llama.cpp 本地推理：GGUF 模型加载、量化、API 服务</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">推理</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">weights-and-biases</div>
+                <div class="skill-desc">W&B 实验跟踪：记录训练、Sweeps、模型注册、仪表板</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">训练</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">📦 本地自定义 Skills</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">3d-interactive-website</div>
+                <div class="skill-desc">创建 3D 交互式网页：模拟人生风格、照片墙、人物模型</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">创意</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">ai-agent-toolkit</div>
+                <div class="skill-desc">AI Agent 工具包开发：提示词设计、知识库配置、变现方案</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">开发</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">side-hustle-income</div>
+                <div class="skill-desc">副业收入策略：外卖/摆摊/组合方案，适合已有主业人群</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">创业</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">ai-motion-comic</div>
+                <div class="skill-desc">AI 动态漫画制作：分镜生成、配音合成完整工作流</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">创意</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">deepseek-harness</div>
+                <div class="skill-desc">DeepSeek Harness (dsh) AI Agent 框架：使用、配置与插件开发</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">框架</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">website-maintenance</div>
+                <div class="skill-desc">网站维护工作流：先检查后执行，等待确认再改动</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">运维</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>网站内容更新</li>
+                        <li>Bug 修复</li>
+                        <li>版本发布</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">hermes-custom-model-setup</div>
+                <div class="skill-desc">自定义 AI 模型配置：在 Hermes 中添加和配置模型</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">配置</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">Skill Factory</div>
+                <div class="skill-desc">元技能：监控工作流并自动生成可复用的 Skills</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">自动化</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>流程自动化</li>
+                        <li>经验沉淀</li>
+                        <li>技能复用</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">portfolio-html</div>
+                <div class="skill-desc">构建作品集网站，支持 Windows 图片处理和 GitHub Pages CDN</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">网站</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>个人作品集</li>
+                        <li>项目展示</li>
+                        <li>公司官网</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">promptlab-features</div>
+                <div class="skill-desc">PromptLab 功能开发：灵感画廊、统计面板、模板库扩展</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">开发</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">python-exe-packaging</div>
+                <div class="skill-desc">Python GUI 打包为 Windows exe（PyInstaller）</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">打包</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">typecho-blog-setup</div>
+                <div class="skill-desc">搭建 Typecho CMS 博客：XAMPP 环境、数据库、文章导入</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">博客</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">website-cloning</div>
+                <div class="skill-desc">网站克隆：分析复刻现有网站结构、设计和功能</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">分析</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🚀 AI 工具站开发</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">ai-gateway</div>
+                <div class="skill-desc">构建 OpenAI 兼容 AI 网关代理，支持多模型路由</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">网关</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">ai-tools-site</div>
+                <div class="skill-desc">AI 工具站搭建：本地 API 后端 + 前端界面</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">网站</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">ai-tools-deploy</div>
+                <div class="skill-desc">AI 工具站部署指南：Vercel、Cloudflare、国内云服务商</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">部署</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">ai-tools-monetization</div>
+                <div class="skill-desc">AI 工具变现：通过 AI 网关实现流量变现</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">变现</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">ai-video-tutorial</div>
+                <div class="skill-desc">AI 视频生成教程：工具调研、验证、提示词公式</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">教程</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">nextjs-ai-gateway</div>
+                <div class="skill-desc">Next.js + Prisma AI 网关：带数据库的多模型路由</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">网关</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">static-site-server</div>
+                <div class="skill-desc">静态网站部署：GBK 中文路径、端口配置、防火墙设置</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">部署</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">📋 商业与创业</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">ai-product-planning</div>
+                <div class="skill-desc">AI 产品规划：从想法到 MVP 的完整流程</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">规划</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">ai-service-deployment</div>
+                <div class="skill-desc">本地 AI 服务部署：Tunnel、免费服务器、国内方案</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">部署</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">fbb-almond-tofu</div>
+                <div class="skill-desc">杏仁豆腐创业：夏季甜品，成本¥2.5/份，毛利81%+</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">创业</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">fbb-startup-planning</div>
+                <div class="skill-desc">餐饮创业规划：产品选择、成本测算、采购清单</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">创业</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🎨 创意内容</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">comfyui</div>
+                <div class="skill-desc">ComfyUI 工作流：AI 图像、视频、音频生成（扩散模型）</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">生成</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>AI 绘画</li>
+                        <li>视频生成</li>
+                        <li>设计素材</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">baoyu-infographic</div>
+                <div class="skill-desc">信息图生成：21 种布局 × 21 种风格（信息图、可视化）</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">设计</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">songwriting-and-ai-music</div>
+                <div class="skill-desc">歌曲创作与 AI 音乐：提示词公式、Suno AI 集成</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">内置</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">音乐</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🏗️ 室内设计与工作室</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">interior-studio-workbench</div>
+                <div class="skill-desc">室内设计工作室工作台：飞书多维表格，8 张表管理系统</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">管理</span>
+                </div>
+                <div class="usage-box">
+                    <h4>使用场景</h4>
+                    <ul>
+                        <li>项目跟踪</li>
+                        <li>客户管理</li>
+                        <li>进度管理</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">social-media-ecommerce-setup</div>
+                <div class="skill-desc">社交平台商品上架：小红书/抖音主图设计、笔记文案</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">电商</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">astro-blog-fuwari</div>
+                <div class="skill-desc">Astro + fuwari 主题博客：克隆模板、中文本地化、部署</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">博客</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">🔧 系统工具</div>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-name">batch-operations</div>
+                <div class="skill-desc">批量操作：图片压缩、Git 批量命令、文件处理</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-high">高频</span>
+                    <span class="badge badge-type">工具</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">design-taste-frontend</div>
+                <div class="skill-desc">反垃圾前端设计：落地页、作品集、仪表板高质量模板</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">设计</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">hermes-setup-and-troubleshooting</div>
+                <div class="skill-desc">Hermes 安装与故障排查：Windows/中国用户常见问题</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-med">中频</span>
+                    <span class="badge badge-type">配置</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-name">oracle-cloud-setup</div>
+                <div class="skill-desc">Oracle Cloud 永久免费服务器申请和部署指南</div>
+                <div class="skill-meta">
+                    <span class="badge badge-source">本地</span>
+                    <span class="badge badge-freq-low">低频</span>
+                    <span class="badge badge-type">云</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align:center;padding:40px;color:#8b949e;font-size:13px;border-top:1px solid #30363d;margin-top:40px;">
+        <p>Hermes Agent Skills 分类大全 · 2026-08-24</p>
+        <p style="margin-top:8px;">共 111 个 Skills · 72 内置 · 39 社区/本地</p>
+    </footer>
+</body>
+</html>
