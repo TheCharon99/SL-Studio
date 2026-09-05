@@ -1,29 +1,8 @@
-# 依赖
-node_modules/
+# Git repositories
+.yier-studio/.git
+**/.git
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.egg-info/
-.venv/
-venv/
-env/
-
-# 临时文件
-*.tmp
-*.temp
-*.swp
-*.swo
-*~
-
-# 系统文件
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# 备份/归档
+# Backup folders
 _backup/
 _备份*/
 _old/
@@ -32,9 +11,7 @@ _old/
 # IDE
 .vscode/
 .idea/
-*.sublime-*
 
-# 大图片（单独管理）
-images/*.jpg
-images/*.png
-images/*.gif
+# OS
+.DS_Store
+Thumbs.db
