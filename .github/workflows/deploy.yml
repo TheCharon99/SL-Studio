@@ -1,0 +1,21 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [master, main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy to Cloudflare Pages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cloudflare/pages-action@v1
+        with:
+          projectName: sl-studio
+          workingDir: .
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: '3'
