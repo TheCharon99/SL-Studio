@@ -1,0 +1,8 @@
+{
+  "name": "sl-studio",
+  "compatibility_date": "2026-09-03",
+  "pages_build_output_dir": "build",
+  "assets": {
+    "directory": "build"
+  }
+}
