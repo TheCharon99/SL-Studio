@@ -1,5 +1,5 @@
 /* ========================================
-   TheCharon 郭校伸设计
+   SL Studio 申聆空间设计
    ======================================== */
 
 /* === 基础 === */
@@ -9,7 +9,7 @@ body {
   width: 960px;
   padding: 0px;
   margin: auto;
-  font: 14px "Microsoft Yahei", "微软雅黑", sans-serif;
+  font: 12px "Microsoft Yahei", "微软雅黑", sans-serif;
   background: #ffffff;
   color: #333333;
   line-height: 1.6;
@@ -92,7 +92,7 @@ body {
 .select-nav { display: none; }
 
 /* === 分隔线 === */
-#line { height: 10px; background: url('../images/line_bg.jpg') repeat-x; margin-bottom: 20px; clear: both; }
+#line { height: 10px; background: url('../images/line_bg.jpg') repeat-x; margin-bottom: 20px; }
 
 /* === 主要内容区 === */
 .content { display: block; float: left; overflow: visible; width: 100%; }
@@ -236,9 +236,8 @@ body {
 #left_about a.active { color: #333333; border-left: 1px solid #333333; padding-left: 8px; }
 
 #middle, #middle_sy {
-  float: left; width: 770px; line-height: 150%;
-  color: #333333;
-  overflow: hidden;
+  float: left; width: 770px; height: 690px; line-height: 150%;
+  color: #999999; overflow: auto;
 }
 #middle ul { list-style: none; margin-left: 0px; padding-left: 0px; padding-top: 3px; }
 #middle li { font-size: 13px; color: #666666; line-height: 1.8; }

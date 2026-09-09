@@ -147,12 +147,12 @@
     font-size: 12px !important;
   }
   
-  /* 服务流程移动端 */
-  #service .service-grid { flex-wrap: wrap; }
-  #service .service-step { width: 48%; }
-  /* 联系页移动端 */
-  #contact .contact-grid { flex-direction: column; }
-  #contact .contact-item { width: 100%; }
+  /* 选择菜单优化 */
+  .select-bav {
+    width: 90% !important;
+    font-size: 14px !important;
+    padding: 12px !important;
+  }
 }
 
 /* === 横屏优化 === */
