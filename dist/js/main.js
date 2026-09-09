@@ -1,4 +1,4 @@
-/* SL-Studio 主脚本 - 原生 JavaScript,无 jQuery 依赖
+/* TheCharon 主脚本 - 原生 JavaScript,无 jQuery 依赖
    替代旧版 nivoSlider / lightbox / filter.gallery / script.js
    结构对齐 wdesign.hk */
 (function () {
@@ -108,7 +108,7 @@
         '<p>' + project.desc + '</p>';
     }
 
-    document.title = project.name + ' - 项目详情 - SL-Studio';
+    document.title = project.name + ' - 项目详情 - TheCharon';
 
     /* 填充图片列表（ul.imchange 结构,对齐参考站） */
     var html = '';
