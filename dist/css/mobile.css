@@ -227,6 +227,63 @@
   }
 }
 
+/* === 项目详情移动端图片切换 === */
+@media screen and (max-width: 768px) {
+  .imchangebtn {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  #s_l, #s_r {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    z-index: 10;
+  }
+  #s_l { left: 10px; }
+  #s_r { right: 10px; }
+  #s_l:hover, #s_r:hover {
+    opacity: 1;
+  }
+}
+
+/* === 项目详情缩略图移动端适配 === */
+@media screen and (max-width: 768px) {
+  #imggray {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  #imggray ul {
+    white-space: nowrap !important;
+    padding: 0 10px !important;
+  }
+  #imggray li {
+    display: inline-block !important;
+    width: 120px !important;
+    height: 90px !important;
+    margin-right: 8px !important;
+    float: none !important;
+  }
+  #imggray img {
+    width: 120px !important;
+    height: 90px !important;
+  }
+}
+
+/* === 项目详情按钮触摸优化 === */
+@media (hover: none) and (pointer: coarse) {
+  #pro_btns a {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+  .imchangebtn {
+    min-width: 50px !important;
+    min-height: 50px !important;
+  }
+}
+
 /* === 联系我们页面优化 === */
 @media screen and (max-width: 768px) {
   #map {
