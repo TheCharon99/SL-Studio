@@ -1,8 +1,0 @@
-# 新增的仓库
-shenling-studio/
-
-# Python
-__pycache__/
-*.pyc
-.venv/
-venv/

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "yier-studio",
+  "name": "shenling-studio",
   "builds": [
     {
       "src": "*.html",

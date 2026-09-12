@@ -1,0 +1,8 @@
+[build]
+command = "true"
+output_dir = "."
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
