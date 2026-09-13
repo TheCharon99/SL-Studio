@@ -1,0 +1,262 @@
+/* ========================================
+   YiER-Studio 移动端优化样式
+   保持桌面端不变，仅针对移动端优化
+   ======================================== */
+
+/* === 基础移动端优化 === */
+@media screen and (max-width: 768px) {
+  /* 确保body不溢出 */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+  
+  /* Logo区域优化 */
+  #logo {
+    padding: 15px 20px !important;
+    text-align: center !important;
+  }
+  #logo img {
+    height: 40px !important;
+    max-width: 100%;
+  }
+  
+  /* 社交图标适配 */
+  #logo .sns_icon {
+    float: none !important;
+    justify-content: center !important;
+    margin-top: 10px !important;
+  }
+  
+  /* 轮播图优化 */
+  #slider {
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+  #slider img {
+    height: 200px !important;
+    width: 100% !important;
+  }
+  
+  /* 分隔线优化 */
+  .lines {
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+  .lines span {
+    font-size: 13px !important;
+    padding: 0 5px !important;
+  }
+  
+  /* 最新项目区域优化 */
+  .recent-projects-list {
+    width: 100% !important;
+    height: auto !important;
+    float: none !important;
+    overflow: hidden !important;
+  }
+  .recent-projects-list li {
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-bottom: 20px !important;
+    float: none !important;
+  }
+  
+  /* 项目卡片优化 */
+  .recent-project-details {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+  .recent-project-details img {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    aspect-ratio: 210/150 !important;
+  }
+  .recent-project-details h5 {
+    font-size: 14px !important;
+    padding: 10px 5px !important;
+  }
+  
+  /* 项目列表页优化 */
+  .projects ul {
+    width: 100% !important;
+    padding: 0 10px !important;
+  }
+  .projects li {
+    width: calc(50% - 10px) !important;
+    margin: 5px !important;
+    float: left !important;
+  }
+  .projects-thumb {
+    width: 100% !important;
+  }
+  .recent-project-details img {
+    width: 100% !important;
+    max-width: 160px !important;
+  }
+  
+  /* 左侧边栏优化 */
+  #left {
+    width: 100% !important;
+    float: none !important;
+    padding: 0 10px !important;
+  }
+  #middle {
+    width: 100% !important;
+    float: none !important;
+  }
+  
+  /* 页脚优化 */
+  #footer {
+    width: 100% !important;
+    padding: 15px 10px !important;
+    text-align: center !important;
+  }
+  #footer a {
+    display: block !important;
+    margin: 5px 0 !important;
+  }
+}
+
+/* === 小屏手机优化 (≤480px) === */
+@media screen and (max-width: 480px) {
+  /* 字体大小优化 */
+  body {
+    font-size: 13px !important;
+  }
+  
+  /* 轮播图进一步缩小 */
+  #slider img {
+    height: 180px !important;
+  }
+  
+  /* 项目列表改为单列 */
+  .projects li {
+    width: 100% !important;
+    margin: 10px 0 !important;
+    float: none !important;
+  }
+  .recent-project-details img {
+    max-width: 100% !important;
+  }
+  
+  /* 分隔线文字更小 */
+  .lines span {
+    font-size: 12px !important;
+  }
+  
+  /* 选择菜单优化 */
+  .select-bav {
+    width: 90% !important;
+    font-size: 14px !important;
+    padding: 12px !important;
+  }
+}
+
+/* === 横屏优化 === */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  #slider img {
+    height: 150px !important;
+  }
+  .recent-projects-list li {
+    width: 48% !important;
+    float: left !important;
+    margin: 1% !important;
+  }
+}
+
+/* === 触摸设备优化 === */
+@media (hover: none) and (pointer: coarse) {
+  /* 增大点击区域 */
+  .nav-horizontal li a {
+    padding: 15px 10px !important;
+    min-height: 44px !important;
+    display: inline-block !important;
+  }
+  .projects-thumb a {
+    min-height: 200px !important;
+    display: block !important;
+  }
+  
+  /* 禁用hover效果，改用active */
+  .recent-project-details:hover {
+    border-bottom-color: #fff !important;
+  }
+  .recent-project-details:active {
+    border-bottom-color: #333 !important;
+    background: #f9f9f9 !important;
+  }
+}
+
+/* === 改善可读性 === */
+@media screen and (max-width: 768px) {
+  /* 行高优化 */
+  p, li, span, div {
+    line-height: 1.6 !important;
+  }
+  
+  /* 文字颜色优化 */
+  .recent-project-details h5 {
+    color: #333 !important;
+    font-weight: 500 !important;
+  }
+  
+  /* 图片懒加载提示（可选） */
+  img {
+    max-width: 100%;
+    height: auto !important;
+  }
+}
+
+/* === 项目详情页优化 === */
+@media screen and (max-width: 768px) {
+  #proj {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .pro-left, .pro-right {
+    width: 100% !important;
+    float: none !important;
+  }
+  .pro-left img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* === 联系我们页面优化 === */
+@media screen and (max-width: 768px) {
+  #map {
+    display: none !important;
+  }
+  #content {
+    padding: 0 15px !important;
+  }
+  .contact-info {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* === 防止iOS Safari弹性滚动 === */
+@supports (-webkit-touch-callout: none) {
+  body {
+    width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* === 优化图片加载 === */
+@media screen and (max-width: 768px) {
+  .slide {
+    width: 100% !important;
+    height: auto !important;
+  }
+  #imggray img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

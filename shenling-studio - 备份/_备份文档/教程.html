@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申聆空间设计网站维护教程</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.8; color: #333; background: #f5f5f5; }
+        .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 3px solid #c9a87c; padding-bottom: 15px; margin-bottom: 30px; }
+        h2 { color: #34495e; margin-top: 35px; margin-bottom: 20px; padding-left: 15px; border-left: 4px solid #c9a87c; }
+        h3 { color: #555; margin-top: 25px; margin-bottom: 15px; }
+        .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .success { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .error { background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        code { background: #f4f4f4; padding: 2px 8px; border-radius: 3px; font-family: "Consolas", "Monaco", monospace; color: #c7254e; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 6px; overflow-x: auto; margin: 15px 0; line-height: 1.5; }
+        pre code { background: none; color: inherit; padding: 0; }
+        .step { background: #f8f9fa; padding: 20px; margin: 15px 0; border-radius: 6px; border: 1px solid #e9ecef; }
+        .step-number { display: inline-block; background: #c9a87c; color: #fff; width: 28px; height: 28px; text-align: center; line-height: 28px; border-radius: 50%; margin-right: 10px; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #c9a87c; color: #fff; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin: 2px; }
+        .tag-html { background: #e1eec3; color: #555; }
+        .tag-css { background: #d0ebff; color: #333; }
+        .tag-js { background: #ffe6d9; color: #555; }
+        .tag-git { background: #f8d7da; color: #721c24; }
+        ul, ol { margin: 15px 0 15px 30px; }
+        li { margin: 8px 0; }
+        .note { font-size: 14px; color: #666; font-style: italic; margin-top: 10px; }
+        .arrow { color: #c9a87c; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📚 申聆空间设计网站维护教程</h1>
+    <p style="color: #666; font-size: 16px; margin-bottom: 30px;">
+        本教程帮助你独立维护申聆空间设计工作室网站，无需编程基础。
+    </p>
+
+    <div class="success">
+        <strong>✅ 网站地址：</strong>https://TheCharon99.github.io/yier-studio/<br>
+        <strong>✅ 域名：</strong>www.yier.site
+    </div>
+
+    <h2>📋 目录</h2>
+    <ol>
+        <li><a href="#project">如何添加新项目</a></li>
+        <li><a href="#edit">如何修改现有项目</a></li>
+        <li><a href="#image">如何更换项目图片</a></li>
+        <li><a href="#about">如何修改关于页面</a></li>
+        <li><a href="#contact">如何修改联系页面</a></li>
+        <li><a href="#upload">如何上传更新到网站</a></li>
+        <li><a href="#tips">实用技巧</a></li>
+    </ol>
+
+    <h2 id="project">一、如何添加新项目</h2>
+    
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>准备项目图片</strong><br>
+        <ul>
+            <li>在项目文件夹中准备图片：<code>cover.jpg</code>（封面）+ <code>1.jpg</code> 到 <code>7.jpg</code>（详情）</li>
+            <li>图片格式：JPG，建议尺寸：1920×1080 像素</li>
+            <li>图片大小：单张不超过 2MB</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>创建项目文件夹</strong><br>
+        <ul>
+            <li>进入 <code>images/</code> 文件夹</li>
+            <li>新建文件夹，命名规则：<code>项目名.jpg</code>（例如：<code>紫金府-现代简约.jpg</code>）</li>
+            <li>将项目图片放入文件夹</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <span class="step-number">3</span>
+        <strong>添加项目数据</strong><br>
+        <p>打开 <code>project-detail.html</code>，找到第 <code>20</code> 行附近，添加项目信息：</p>
+        <pre><code>// 在项目列表末尾添加新项目
+{
+    id: "紫金府-现代简约",           // 文件夹名称（英文或拼音）
+    cover: "images/紫金府-现代简约.jpg/cover.jpg",
+    images: [
+        "images/紫金府-现代简约.jpg/1.jpg",
+        "images/紫金府-现代简约.jpg/2.jpg",
+        // ... 最多7张详情图
+    ],
+    title: "紫金府 · 现代简约风格",
+    category: "私人公寓",               // 类型：私人公寓/私人豪宅/办公室/商业空间
+    area: "120㎡",
+    location: "上海金山",
+    description: "项目描述文字..."
+},</code></pre>
+    </div>
+
+    <div class="step">
+        <span class="step-number">4</span>
+        <strong>更新首页轮播图（可选）</strong><br>
+        <p>如果需要首页轮播，打开 <code>index.html</code>，找到第 <code>45</code> 行，添加轮播图：</p>
+        <pre><code>&lt;img src="images/紫金府-现代简约.jpg/cover.jpg" alt="紫金府项目"&gt;</code></pre>
+    </div>
+
+    <div class="step">
+        <span class="step-number">5</span>
+        <strong>更新项目列表页</strong><br>
+        <p>打开 <code>projects.html</code>，在对应分类下添加项目链接：</p>
+        <pre><code>&lt;li&gt;&lt;a href="project-detail.html?project=紫金府-现代简约"&gt;紫金府 · 现代简约&lt;/a&gt;&lt;/li&gt;</code></pre>
+    </div>
+
+    <h2 id="edit">二、如何修改现有项目</h2>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>修改项目信息</strong><br>
+        <p>打开 <code>project-detail.html</code>，找到对应的 <code>id</code>，修改：<code>title</code>、<code>category</code>、<code>area</code>、<code>description</code> 等字段。</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>修改项目图片</strong><br>
+        <ul>
+            <li>进入 <code>images/项目文件夹/</code></li>
+            <li>替换 <code>cover.jpg</code> 或 <code>1.jpg</code> 等图片</li>
+            <li>保持文件名不变</li>
+        </ul>
+    </div>
+
+    <h2 id="image">三、如何更换项目图片</h2>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>压缩图片（重要）</strong><br>
+        <p>使用在线工具压缩图片：<a href="https://tinypng.com" target="_blank">TinyPNG</a></p>
+        <ul>
+            <li>压缩前：2MB → 压缩后：&lt;500KB</li>
+            <li>保持画质清晰</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>替换图片</strong><br>
+        <ul>
+            <li>进入对应项目文件夹</li>
+            <li>删除旧图片，放入新图片</li>
+            <li>保持文件名不变</li>
+        </ul>
+    </div>
+
+    <h2 id="about">四、如何修改关于页面</h2>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>编辑关于页面</strong><br>
+        <p>打开 <code>about.html</code>，找到对应的段落进行修改：</p>
+        <pre><code>&lt;h2&gt;关于申聆空间设计&lt;/h2&gt;
+&lt;p&gt;修改这里的文字内容...&lt;/p&gt;</code></pre>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>修改团队介绍</strong><br>
+        <pre><code>&lt;div class="team-member"&gt;
+    &lt;img src="images/team/孙思佳.jpg" alt="孙思佳"&gt;
+    &lt;h3&gt;孙思佳&lt;/h3&gt;
+    &lt;p&gt;创始人 · 12年经验&lt;/p&gt;
+    &lt;p&gt;修改个人介绍文字...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <h2 id="contact">五、如何修改联系页面</h2>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>修改联系方式</strong><br>
+        <p>打开 <code>contact.html</code>，找到并修改：</p>
+        <pre><code>&lt;p&gt;📱 电话：15179600708&lt;/p&gt;
+&lt;p&gt;📧 邮箱：1364008473@qq.com&lt;/p&gt;
+&lt;p&gt;💬 微信：修改微信号&lt;/p&gt;
+&lt;p&gt;📍 地址：上海市金山区修改地址&lt;/p&gt;</code></pre>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>修改社交媒体链接</strong><br>
+        <pre><code>&lt;a href="https://www.xiaohongshu.com/user/profile/你的主页" target="_blank"&gt;小红书&lt;/a&gt;
+&lt;a href="https://weixin.qq.com/你的二维码" target="_blank"&gt;微信&lt;/a&gt;</code></pre>
+    </div>
+
+    <h2 id="upload">六、如何上传更新到网站</h2>
+
+    <div class="warning">
+        <strong>⚠️ 重要：</strong>每次修改后都需要上传更新，否则网站不会显示新内容。
+    </div>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>打开命令提示符</strong><br>
+        <ul>
+            <li>按 <code>Win + R</code>，输入 <code>cmd</code>，回车</li>
+            <li>进入网站文件夹：<code>cd E:/portfolio/yier-studio</code></li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>提交更改</strong><br>
+        <pre><code>git add .
+git commit -m "添加新项目：紫金府"</code></pre>
+    </div>
+
+    <div class="step">
+        <span class="step-number">3</span>
+        <strong>上传到GitHub</strong><br>
+        <pre><code>git push origin main</code></pre>
+    </div>
+
+    <div class="step">
+        <span class="step-number">4</span>
+        <strong>等待更新</strong><br>
+        <ul>
+            <li>等待 1-3 分钟</li>
+            <li>访问 <a href="https://TheCharon99.github.io/yier-studio/" target="_blank">网站预览</a></li>
+            <li>按 <code>Ctrl+Shift+R</code> 强制刷新浏览器</li>
+        </ul>
+    </div>
+
+    <h2 id="tips">七、实用技巧</h2>
+
+    <h3>1. 常用快捷键</h3>
+    <table>
+        <tr>
+            <th>快捷键</th>
+            <th>功能</th>
+        </tr>
+        <tr>
+            <td><code>Ctrl + S</code></td>
+            <td>保存文件</td>
+        </tr>
+        <tr>
+            <td><code>Ctrl + Z</code></td>
+            <td>撤销上一步操作</td>
+        </tr>
+        <tr>
+            <td><code>Ctrl + F</code></td>
+            <td>在文件中搜索</td>
+        </tr>
+        <tr>
+            <td><code>Ctrl + Shift + R</code></td>
+            <td>强制刷新浏览器（清除缓存）</td>
+        </tr>
+    </table>
+
+    <h3>2. 常用命令速查</h3>
+    <table>
+        <tr>
+            <th>命令</th>
+            <th>功能</th>
+        </tr>
+        <tr>
+            <td><code>git status</code></td>
+            <td>查看有哪些文件被修改</td>
+        </tr>
+        <tr>
+            <td><code>git add .</code></td>
+            <td>添加所有修改的文件</td>
+        </tr>
+        <tr>
+            <td><code>git commit -m "说明"</code></td>
+            <td>提交更改并添加说明</td>
+        </tr>
+        <tr>
+            <td><code>git push</code></td>
+            <td>上传到GitHub</td>
+        </tr>
+    </table>
+
+    <h3>3. 文件结构说明</h3>
+    <pre><code>yier-studio/
+├── index.html          # 首页
+├── about.html          # 关于页面
+├── projects.html       # 项目列表
+├── project-detail.html # 项目详情（需要添加项目数据）
+├── contact.html        # 联系页面
+├── career.html         # 事业机会
+├── css/
+│   └── sl-style.css  # 主样式文件
+├── js/
+│   └── main.js         # 主脚本文件
+└── images/
+    ├── logo.png        # 网站Logo
+    ├── wx.png          # 微信二维码
+    └── [项目名]/       # 每个项目一个文件夹
+        ├── cover.jpg   # 封面图
+        └── 1.jpg - 7.jpg # 详情图</code></pre>
+
+    <h3>4. 常见问题</h3>
+    <div class="error">
+        <strong>Q1: 网站不显示新图片？</strong><br>
+        A: 按 <code>Ctrl+Shift+R</code> 强制刷新，或清除浏览器缓存。
+    </div>
+    <div class="error">
+        <strong>Q2: 图片太大加载慢？</strong><br>
+        A: 使用 <a href="https://tinypng.com" target="_blank">TinyPNG</a> 压缩图片。
+    </div>
+    <div class="error">
+        <strong>Q3: 修改后网站没有变化？</strong><br>
+        A: 确保已执行 <code>git push</code> 命令上传到GitHub。
+    </div>
+    <div class="error">
+        <strong>Q4: 如何查看修改记录？</strong><br>
+        A: 在命令行输入 <code>git log</code> 查看提交历史。
+    </div>
+
+    <h2>八、项目维护检查清单</h2>
+    <table>
+        <tr>
+            <th>任务</th>
+            <th>频率</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>添加新项目</td>
+            <td>按需</td>
+            <td>创建文件夹 + 添加图片 + 修改HTML</td>
+        </tr>
+        <tr>
+            <td>压缩图片</td>
+            <td>每次添加项目</td>
+            <td>使用TinyPNG压缩</td>
+        </tr>
+        <tr>
+            <td>上传更新</td>
+            <td>每次修改后</td>
+            <td>git add → commit → push</td>
+        </tr>
+        <tr>
+            <td>检查网站</td>
+            <td>每周</td>
+            <td>访问网站，检查图片和链接</td>
+        </tr>
+    </table>
+
+    <div class="success">
+        <strong>🎉 恭喜！</strong><br>
+        按照本教程，你可以独立完成网站维护，无需依赖他人。
+    </div>
+
+    <p class="note" style="margin-top: 40px; text-align: center;">
+        如有疑问，随时联系开发者。<br>
+        教程最后更新：2026年8月21日
+    </p>
+</div>
+</body>
+</html>
