@@ -1,0 +1,422 @@
+/* ========================================
+   YiER-Studio 懿贰设计
+   值来源：wdesign.hk style.css + style1.css
+   ======================================== */
+
+/* === 基础 === */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; min-height: 100vh; }
+body {
+  width: 960px;
+  padding: 0px;
+  margin: auto;
+  font: 12px "Microsoft Yahei", "微软雅黑", sans-serif;
+  background: #ffffff;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* === 语言切换栏 === */
+#toper { background: #ededed; height: 10px; width: 100%; float: left; }
+#toper span { float: right; font-size: 12px; margin-top: 15px; }
+#toper a { color: #999999; text-decoration: none; margin: 0 5px; }
+#toper a:hover { color: #333333; }
+#toper a.active { font-weight: bold; color: #000000; }
+
+/* === Logo区域 === */
+#logo { padding: 30px 0px 20px 50px; }
+#logo a { text-decoration: none; border: none; display: inline-block; }
+#logo img { border: none; height: 50px; }
+
+/* === 社交图标（背景图方式，对齐参考站） === */
+#footer a, #logo a, .sns_icon a { line-height: 25px; position: relative; }
+#logo .sns_icon { float: right; display: flex; align-items: center; margin-top: 15px; color: #999; font-size: 12px; }
+#logo .sns_line { color: #ccc; padding: 0 2px; line-height: 1; position: relative; top: -4px; }
+#logo .sns_icon a {
+  width: 22px; height: 25px; padding-left: 20px;
+  margin-left: 15px; margin-right: 15px; text-decoration: none; display: inline-block;
+}
+.icon_ins { background: url('../images/icon_ins.png') -26px 0px no-repeat; }
+.icon_ins:hover { background: url('../images/icon_ins.png') 0px 0px no-repeat; }
+.icon_xhs { background: url('../images/icon_xhs.png') no-repeat; background-size: 90% auto; }
+.icon_xhs:hover { background: url('../images/icon_xhs_hover.png') no-repeat; background-size: 90% auto; }
+.icon_wb { background: url('../images/icon_wb.png') -27px 0px no-repeat; }
+.icon_wb:hover { background: url('../images/icon_wb.png') -2px 0px no-repeat; }
+.icon_wx { background: url('../images/icon_wx.png') -27px 0px no-repeat; margin-right: 0px !important; }
+.icon_wx:hover { background: url('../images/icon_wx.png') -2px 0px no-repeat; margin-right: 0px !important; }
+
+/* 微信二维码弹窗 */
+.wechat {
+  position: absolute; top: -5px; left: 25px;
+  width: 76px; height: 75px; z-index: 999; display: none;
+}
+.wechat img { width: 100%; height: 100%; }
+
+/* === 导航栏 === */
+#me1 { height: 35px; border-top: 1px solid #ededed; background: #fff; }
+#horizontal-menu-container {
+  position: relative; display: block; width: 100%;
+  border-top: 1px solid #ededed; text-align: center;
+}
+.nav-horizontal { display: block; margin-top: 10px; height: 16px; list-style: none; padding: 0; position: relative; }
+.nav-horizontal li { display: inline-block; height: 30px; margin-right: 30px; text-align: left; position: relative; }
+.nav-horizontal li:last-child { margin-right: 0; }
+.nav-horizontal li a { color: #666666; text-decoration: none; padding: 14px 0; margin-top: -13px; font-weight: bold; position: relative; }
+.nav-horizontal li a:hover { color: #000000; }
+.nav-horizontal li.current-menu-item a { color: #333333; }
+.curr, .nav-horizontal li.current-menu-item a {
+  margin-top: -11px !important; padding-top: 10px !important; border-top: 1px solid #000;
+}
+
+/* === 移动端导航 === */
+#me2 { display: none; }
+.select-bav {
+  margin-top: 30px; margin-bottom: 10px; padding: 20px;
+  color: #333; width: 300px; margin-left: auto; margin-right: auto;
+}
+.select-nav { display: none; }
+
+/* === 分隔线 === */
+#line { height: 10px; background: url('../images/line_bg.jpg') repeat-x; margin-bottom: 20px; }
+
+/* === 主要内容区 === */
+.content { display: block; float: left; overflow: visible; width: 100%; }
+
+/* === 轮播图 === */
+#slider { margin-top: -20px; width: 100%; overflow: hidden; }
+#slider img { width: 100%; height: 400px; object-fit: cover; display: block; }
+
+/* === 项目标题分隔 === */
+.separator { margin-top: 0px; margin-bottom: 0px; }
+.lines {
+  display: table-row; width: 100%; margin-top: 30px; white-space: nowrap;
+}
+.lines div { display: table-cell; padding: 0 15px 0 15px; margin-bottom: 50px; }
+.lines::before {
+  display: table-cell; content: ''; width: 50%; height: 1px; border-top: 1px solid #ededed;
+}
+.lines::after {
+  display: table-cell; content: ''; width: 50%; height: 1px; border-top: 1px solid #ededed;
+}
+.left .lines::before { width: 0; }
+.left .lines::after { width: 100%; }
+.lines div > * { display: block; margin-top: -9px; margin-bottom: 20px; }
+.lines span { color: #666666; font-size: 14px; }
+
+/* === 项目介绍文字 === */
+#desc { padding-right: 10px; color: #999999; line-height: 150%; }
+#desc a.button {
+  margin-right: 20px; display: inline-block; height: 23px;
+  padding-left: 30px; padding-top: 1px;
+  background: url('../images/button.png') no-repeat; font-size: 14px;
+  color: #666; text-decoration: none;
+}
+
+/* === 最新项目 === */
+.recent-projects { position: relative; z-index: 10; }
+.recent-project-arrows {
+  display: inline-block; position: absolute; top: 10px; right: 0px; height: 20px; z-index: 20;
+}
+.recent-project-arrows li { display: inline-block; height: 20px; }
+.recent-project-arrows li:last-child { display: inline-block; }
+.next {
+  display: block; width: 23px; height: 23px;
+  background: url('../images/arrows.gif') right center no-repeat;
+}
+.next:hover { opacity: 0.5; }
+.prev {
+  display: block; width: 23px; height: 23px;
+  background: url('../images/arrows.gif') left center no-repeat;
+}
+.prev:hover { opacity: 0.5; }
+
+.recent-projects-list {
+  display: block; position: relative; overflow: hidden; float: left;
+  width: 690px; height: 245px; list-style: none;
+}
+.recent-projects-list li { display: block; width: 210px; float: left; margin-right: 30px; }
+.recent-projects-list li:nth-child(3n) { margin-right: 0; }
+
+/* === 项目卡片 === */
+.projects-thumb { display: block; position: relative !important; padding-bottom: 20px; }
+.projects-thumb > a { display: block; z-index: 0; }
+.projects-thumb img { border: none; display: block; }
+.projects-thumb a { position: relative; line-height: 0 !important; }
+
+.projects-thumb::before {
+  display: block; position: absolute; content: '';
+  width: 50%; height: 20px; top: 100%; left: 5px; margin-top: -20px; z-index: 1;
+  background: url('../images/frame-shadow-left.png') top left no-repeat;
+}
+.projects-thumb::after {
+  display: block; position: absolute; content: '';
+  width: 50%; height: 20px; top: 100%; right: 5px; margin-top: -20px; z-index: 1;
+  background: url('../images/frame-shadow-right.png') top right no-repeat;
+}
+
+.recent-project-details {
+  display: block; background: #fff; padding: 0 0 15px 0; text-align: center;
+  border-bottom: 1px solid #fff; color: #999999; line-height: 150%;
+}
+.recent-project-details img {
+  border: none;
+  width: 210px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+}
+.recent-project-details h5 {
+  color: #666666; margin-bottom: 2px; font-size: 14px; font-weight: 200; margin-top: 12px;
+}
+.recent-project-details a { display: inline; color: #ccc; border: none; text-decoration: none; }
+.recent-project-details:hover { border-bottom: 1px solid #333 !important; }
+.recent-project-details a:hover { color: #000; text-decoration: underline; }
+
+/* thumb-cover 效果 */
+.thumb-cover {
+  display: none; position: absolute; width: 210px; height: 150px; top: 0px;
+  background: url('../images/ltl-corner.png') top right no-repeat; overflow: hidden;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { .thumb-cover { top: -140px; } }
+.thumb-more {
+  display: block; position: absolute; width: 210px; height: 150px; top: 100%;
+}
+
+/* === 项目精选页 === */
+#page_title {
+  height: 20px; border-bottom: 1px solid #ededed;
+  padding: 10px 10px 10px 0px; margin-bottom: 30px; padding-top: 10px;
+}
+#left { float: left; width: 190px; }
+#left ul { list-style: none; padding-left: 10px; }
+#left li { line-height: 200%; }
+#left a { text-decoration: none; padding-left: 5px; font-weight: bold; }
+#left a:hover { color: #000; }
+#left_desc {
+  color: #666666; border-bottom: 1px solid #ededed;
+  padding-bottom: 30px; line-height: 150%;
+}
+#content { float: left; margin-top: -10px; padding-left: 20px; margin-left: 10px; }
+
+/* === 筛选按钮 === */
+.gallery-filter { list-style: none; margin: 0; padding: 0; }
+.gallery-filter li { line-height: 200%; }
+.gallery-filter li a { color: #999999; text-decoration: none; }
+.gallery-filter li a:hover { color: #000; }
+.line_ds { display: none; }
+.active a { color: #333333 !important; }
+
+/* === 项目网格 === */
+.projects { position: relative !important; width: 730px; overflow: hidden; list-style: none; margin: 0; padding: 0; }
+.projects li {
+  display: inline-block; margin-left: 0px; margin-right: 20px; margin-bottom: 25px; overflow: hidden;
+}
+.three-columns li:nth-child(3n+0) { margin-right: 0; }
+
+/* === 关于我们页面 === */
+#left_about { float: left; width: 190px; }
+#left_about ul { list-style: none; padding-left: 10px; }
+#left_about li { line-height: 200%; }
+#left_about a { color: #999999; text-decoration: none; padding-left: 5px; font-weight: bold; }
+#left_about a:hover { color: #000000; }
+#left_about a.active { color: #333333; border-left: 1px solid #333333; padding-left: 8px; }
+
+#middle, #middle_sy {
+  float: left; width: 770px; height: 690px; line-height: 150%;
+  color: #999999; overflow: auto;
+}
+#middle ul { list-style: none; margin-left: 0px; padding-left: 0px; padding-top: 3px; }
+#middle li { font-size: 13px; color: #666666; line-height: 1.8; }
+#middle ul li div {
+  border-left: 1px solid #999999; padding-left: 10px; line-height: 150%; font-size: 14px;
+}
+#middle p { font-size: 13px; line-height: 1.8; color: #666666; margin-bottom: 15px; }
+#middle h3 { font-size: 16px; color: #333333; margin-bottom: 15px; font-weight: normal; }
+
+/* === 事业机会页面 === */
+#list_sy { float: left; width: 75%; margin-top: 10px; }
+#ser_content { float: left; margin-top: -30px; margin-left: 10px; width: 760px; }
+#ser_content ul { list-style: none; padding: 0px; }
+#ser_content li { float: left; padding: 0px; }
+#ser_content img { border: none; }
+
+/* === 联系我们页面 === */
+#f_left { float: left; width: 70%; }
+#f_right { float: left; width: 30%; }
+.f_text { width: 32%; padding-bottom: 10px; float: left; margin-right: 2%; }
+.f_text label { font-size: 12px; color: #333333; margin-bottom: 5px; display: block; }
+.f_text input {
+  width: 100%; padding: 5px; border: 1px solid #333; height: 20px;
+  font-family: "Microsoft Yahei", "微软雅黑", sans-serif; font-size: 12px; text-align: left;
+}
+.f_textarea { width: 96%; margin-bottom: 20px; }
+.f_textarea textarea {
+  width: 100%; border: 1px solid #333; padding: 5px;
+  font-family: "Microsoft Yahei", "微软雅黑", sans-serif; font-size: 12px; resize: vertical;
+}
+#add {
+  color: #666; line-height: 200%; font-size: 12px;
+  margin: 10px 5px 20px 0px; padding-left: 10px; border-left: 1px solid #333;
+}
+#add strong { color: #333333; font-weight: normal; font-size: 12px; display: block; margin-bottom: 10px; }
+#map { margin-bottom: 20px; margin-top: -40px; width: 100%; height: 350px; }
+#map iframe { width: 100%; height: 100%; border: none; }
+#sub_btn {
+  cursor: pointer; padding: 5px 30px; background-color: #333; color: #fff;
+  text-align: center; border: 1px solid #000; margin-top: 10px; margin-bottom: 20px; margin-left: 35px; font-size: 12px;
+}
+#sub_btn:hover { background-color: #000; }
+#khfw a { color: #666666; }
+#khfw a:hover { color: #000; }
+
+/* === 项目详情页面 === */
+#pro_btns { text-align: right; line-height: 35px; margin: 5px 0; }
+#pro_btns a { display: inline-block; width: 23px; height: 23px; margin: 5px 6px; text-decoration: none; }
+.pro_btn_l { background: url('../images/s_l.png') no-repeat; }
+.pro_btn_x { background: url('../images/s_x.png') no-repeat; }
+.pro_btn_r { background: url('../images/s_r.png') no-repeat; }
+
+#proj { width: 960px; height: 333px; border: 1px solid #ededed; overflow: hidden; clear: both; }
+.pro-left { float: left; }
+.pro-left ul {
+  list-style: none; margin: 0; padding: 10px; width: 471px; height: 313px; overflow: hidden; position: relative;
+}
+.pro-right {
+  float: right; width: 450px; line-height: 150%; color: #666666;
+  padding-right: 10px; height: 360px;
+}
+.pro-right .nei { font-size: 14px; padding-top: 15px; padding-bottom: 28px; float: left; }
+#project_name {
+  font-size: 18px; color: #333333;
+  font-family: "Microsoft Yahei", "微软雅黑", sans-serif; float: left;
+}
+#project_info { font-size: 13px; color: #666666; line-height: 1.8; }
+#project_info p { margin-bottom: 10px; }
+#project_info strong { color: #333333; }
+
+/* 图片切换按钮 */
+.imchangebtn { position: relative; display: inline-block; width: 100px; height: 100px; cursor: pointer; }
+.op8 { filter: alpha(opacity=80); -moz-opacity: 0.8; -khtml-opacity: 0.8; opacity: 0.8; }
+.op3 { filter: alpha(opacity=30); -moz-opacity: 0.3; -khtml-opacity: 0.3; opacity: 0.3; }
+#s_l { top: -200px; left: 14px; background: url('../images/s_l.png') no-repeat 0px 20px; }
+#s_r { top: -200px; left: 330px; background: url('../images/s_r.png') no-repeat 0px 20px; }
+
+/* 缩略图画廊 */
+#imggray { margin-top: 20px; clear: both; width: 960px; }
+#imggray ul { list-style: none; padding-left: 0px; margin-top: -12px; }
+#imggray li { float: left; width: 188px; height: 126px; padding: 2px; }
+#imggray img { width: 188px; border: none; height: 126px; object-fit: cover !important; }
+
+.gray {
+  -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%); -o-filter: grayscale(100%);
+  filter: grayscale(100%); filter: gray; width: 960px; text-align: left;
+}
+#imggray img { -webkit-filter: grayscale(100%); filter: grayscale(100%); transition: filter 0.3s ease; }
+#imggray li:hover img { -webkit-filter: grayscale(0%); filter: grayscale(0%); }
+
+/* 项目详情分割线 */
+#project_info { font-size: 13px; color: #666666; line-height: 1.8; }
+#project_info p { margin-bottom: 10px; }
+#project_info strong { color: #333333; }
+.pro-right .divider { height: 1px; border-bottom: 1px solid #ededed; margin-bottom: 8px; }
+
+/* === 404页面 === */
+.error-404 { display: block; text-align: center; height: 300px; margin-top: 100px; }
+.error-404 h1 { font-size: 72px; color: #ededed; margin-bottom: 20px; }
+.error-404 p { font-size: 18px; color: #999999; margin-bottom: 40px; }
+.error-404 a.button {
+  display: inline-block; padding: 10px 30px; background: #333333;
+  color: #ffffff; text-decoration: none; font-size: 13px;
+}
+.error-404 a.button:hover { background: #000000; }
+
+/* === 页脚 === */
+#footer { height: 65px; border-top: 1px solid #E3E3E3; position: relative; padding: 20px 0; width: 100%; clear: both; margin-top: 40px; }
+#footer a { color: #999999; text-decoration: none; font-size: 11px; }
+#footer a:hover { color: #333333; }
+#footer strong { color: #666666; font-weight: normal; }
+
+/* === 工具类 === */
+.clearfix { clear: both; }
+.block { overflow: hidden; display: block; }
+.full-width { width: 100%; clear: right; }
+.one-fourth { width: 238px; color: #999999; }
+.one-half { width: 450px; }
+.one-third { width: 290px; }
+.three-fourths { width: 700px; }
+.two-thirds { width: 610px; }
+.last { margin-right: 0; clear: right; }
+
+/* === 选中样式 === */
+::selection { background-color: #999; color: #fff; }
+::-moz-selection { background-color: #000000; color: #fff; }
+
+/* === 响应式布局 === */
+@media screen and (max-width: 960px) {
+  body { width: 100%; }
+  #logo { padding: 20px; }
+  .recent-projects-list { width: 70% !important; margin: auto !important; }
+  #desc { width: 20%; padding-left: 10px; }
+  .lines { width: 91% !important; }
+  .lines:after { border-top: 0px !important; }
+  .lines span { padding-left: 10px; }
+  .projects { width: 100% !important; }
+  .projects li { margin-right: 20px !important; }
+  #content { width: 75% !important; padding-left: 0px !important; }
+  #pro_btns { width: 94%; margin: auto; }
+  #proj { border: none; width: 94%; height: auto !important; overflow-x: hidden; }
+  .pro-right { width: 94% !important; height: auto !important; }
+  .pro-left { float: none !important; }
+  #f_left { float: none !important; width: 80% !important; margin-left: 10%; margin-right: 10%; }
+  #f_right { float: none !important; width: 80% !important; margin-left: 10%; margin-right: 10%; }
+  #add { padding-left: 0px !important; border-left: none !important; }
+  #map { display: none; }
+}
+
+@media screen and (max-width: 768px) {
+  #me1 { display: none; }
+  #me2 { display: block; margin-top: -33px; }
+  #logo { padding: 15px 20px; text-align: center; }
+  .sns_icon { margin-top: 10px; }
+  .recent-projects-list { width: 70% !important; margin: auto !important; float: none !important; }
+  .lines span { padding-left: 0px; }
+  #left_about { width: 30%; }
+  #left_about ul { padding-left: 13px !important; }
+  #middle { width: 70% !important; height: auto !important; }
+  #slider { width: 94% !important; }
+  #slider img { height: 300px; }
+  .separator { width: 93% !important; padding-left: 22px; }
+  #left { width: 200px; padding-left: 20px; }
+  .projects { width: 500px !important; }
+  .projects li { margin-right: 20px !important; }
+  #page_title { margin-left: 15px !important; width: 94%; padding-right: 0px !important; }
+  #proj { border: none; width: 94%; height: auto !important; overflow-x: hidden; }
+  .pro-right { width: 94% !important; height: auto !important; }
+  .pro-left { float: none !important; }
+  #footer { width: 94% !important; margin: auto; margin-top: 10px !important; }
+}
+
+@media screen and (max-width: 640px) {
+  body { width: 100% !important; overflow-x: hidden !important; overflow-y: auto !important; }
+  #logo { text-align: center !important; padding: 20px 50px 0px 50px !important; }
+  .recent-projects-list { width: 75% !important; }
+  .lines span { padding-left: 0px !important; }
+  .select-bav { width: 87% !important; margin-top: 20px !important; }
+  #middle { width: 65% !important; overflow: none; padding-right: 4px; }
+  #left_about { width: 30% !important; padding-left: 4px; }
+  #left_desc { padding: 0px 10px 30px 10px !important; width: 93% !important; }
+  #content { float: none !important; width: auto !important; margin-left: 0px !important; padding-top: 0px !important; }
+  .pro-left { float: none !important; width: 300px !important; }
+  .pro-right { float: none !important; height: auto !important; }
+  #left { width: 96% !important; float: none; padding-left: 10px !important; }
+  #imggray li { width: 300px !important; height: 220px !important; margin: auto !important; float: none !important; }
+  #imggray img { width: 300px !important; height: 220px !important; }
+}
+
+@media screen and (max-width: 480px) {
+  .select-bav { width: 87% !important; margin-top: 19px !important; }
+  .pro-right { width: 90% !important; }
+  #page_title { margin-left: 10px !important; }
+  #content { width: 100% !important; }
+}

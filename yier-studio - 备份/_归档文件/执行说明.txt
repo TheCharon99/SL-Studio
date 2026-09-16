@@ -1,0 +1,15 @@
+echo ========================================
+echo 懿贰设计项目 - 图片重命名操作步骤
+echo ========================================
+echo.
+echo 请在命令提示符中依次运行以下命令：
+echo.
+echo 步骤1: 重命名图片
+echo   cd E:\portfolio\yier-studio
+echo   .\run-rename.bat
+echo.
+echo 步骤2: 更新 HTML
+echo   .\run-update-html.bat
+echo.
+echo 完成后，图片将按照 HTML 中的项目名进行命名。
+echo ========================================

@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>创始人 - YiER-Studio 懿贰设计</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/yier-style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <script src="js/anti-theft.js"></script>
+    <style>
+        /* 团队介绍页面样式 */
+        .team-section {
+            float: left;
+            width: 770px;
+            padding: 20px 0;
+        }
+        
+        .team-member {
+            display: flex;
+            margin-bottom: 60px;
+            align-items: flex-start;
+        }
+        
+        .team-member:last-child {
+            margin-bottom: 0;
+        }
+        
+        .member-photo {
+            flex-shrink: 0;
+            width: 200px;
+            height: 260px;
+            margin-right: 40px;
+            overflow: hidden;
+            background: #f5f5f5;
+            border: 1px solid #ededed;
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        
+        .member-photo:hover img {
+            filter: grayscale(0%);
+        }
+        
+        .member-info {
+            flex: 1;
+            padding-top: 10px;
+        }
+        
+        .member-name {
+            font-size: 26px;
+            color: #222222;
+            margin-bottom: 8px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .member-role {
+            font-size: 14px;
+            color: #999999;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+        
+        .member-bio {
+            font-size: 14px;
+            color: #444444;
+            line-height: 2;
+            text-align: justify;
+        }
+        
+        .divider {
+            height: 1px;
+            background: #ededed;
+            margin: 40px 0;
+        }
+        
+        /* 响应式 */
+        @media screen and (max-width: 768px) {
+            .team-member {
+                flex-direction: column;
+            }
+            
+            .member-photo {
+                width: 100%;
+                height: 300px;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .member-info {
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="logo">
+    <a href="index.html"><img src="images/logo.png" alt="懿贰设计 YiER-Studio" style="border:none;height:50px;"></a>
+    <div class="sns_icon"><a href="https://xhslink.com/m/AT0BUOqA0YQ" rel="nofollow" id="icon_xhs" class="icon_xhs" target="_blank"></a><span class="sns_line">|</span><a href="javascript:void(0)" id="icon_wx" class="icon_wx"><div class="wechat" id="wechat"><img src="images/wx.png" alt="微信二维码"></div></a></div>
+</div>
+
+<div id="me1" style="height:35px;">
+    <div id="horizontal-menu-container" class="nav-top">
+        <div class="horizontal-menu-selector"></div>
+        <ul id="menu-main-menu" class="nav-horizontal">
+            <li class="menu-item"><a href="index.html">首&nbsp;页<span class="nav-item-desc"></span></a></li>
+            <li class="menu-item current-menu-item curr"><a href="about.html">关于我们<span class="nav-item-desc"></span></a></li>
+            <li class="menu-item"><a href="projects.html">项目精选<span class="nav-item-desc"></span></a></li>
+            <li class="menu-item"><a href="career.html">事业机会<span class="nav-item-desc"></span></a></li>
+            <li class="menu-item"><a href="contact.html">联系我们<span class="nav-item-desc"></span></a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="me2">
+    <select class="select-bav" id="gopage" onchange="gopage()">
+        <option value="index.html">首页</option>
+        <option value="about.html" selected>关于我们</option>
+        <option value="projects.html">项目精选</option>
+        <option value="career.html">事业机会</option>
+        <option value="contact.html">联系我们</option>
+    </select>
+</div>
+<div style="clear:both;"></div>
+<script>function gopage(){location.href=document.getElementById("gopage").value;}</script>
+
+<div id="line"></div>
+
+<div id="left_about">
+    <ul style="padding-left:0px;">
+        <li><a href="about.html" style="color:#999999;">关于我们</a></li>
+        <li><a href="about.html" style="color:#999999;">公司荣誉</a></li>
+        <li><a href="founder.html" style="color:#333333;border-left:1px solid #333333;">创始人</a></li>
+        <li><a href="about.html" style="color:#999999;">设计语言</a></li>
+    </ul>
+</div>
+
+<div class="team-section">
+    <!-- 孙思佳 -->
+    <div class="team-member">
+        <div class="member-photo">
+            <img src="images/placeholder-founder-1.jpg" alt="孙思佳">
+        </div>
+        <div class="member-info">
+            <h2 class="member-name">孙思佳</h2>
+            <p class="member-role">创始人</p>
+            <p class="member-bio">
+                12年的设计生涯，她始终推崇无微不至的服务理念，为客户提供最全面、最细致的贴心服务。有着丰富经验的工装设计，擅长现代类风格，善于沟通且非常具有耐心，总是能有些让人意想不到的设计亮点展现，她喜欢旅行，不断学习不同的东西，对于各种新奇物件始终保有好奇心。她的作品曾登上中国豪宅大选，并且在米兰设计展、上海设计周活动金蝴蝶奖，分别在《别墅风格大观》精装本第三期、《精品家居》杂志、《拓者设计吧作品年鉴》等专业刊物刊登。她是真正的"走心设计，别具匠心"。
+            </p>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <!-- 孟瑶 -->
+    <div class="team-member">
+        <div class="member-photo">
+            <img src="images/placeholder-founder-2.jpg" alt="孟瑶">
+        </div>
+        <div class="member-info">
+            <h2 class="member-name">孟瑶</h2>
+            <p class="member-role">联合创始人</p>
+            <p class="member-bio">
+                工作经验10年，擅长现代简约类风格，她的优势点在沟通很好、性格很温和，室内格局动线改造很占优势，做事细致，充满智慧，心宽体胖对于工艺、材料都非常精通。她喜欢上海文化、熟知上海文化，也更喜欢去不同的地方感受不一样的生活。而她的设计，总是在精致中又带着轻松感。
+            </p>
+        </div>
+    </div>
+</div>
+
+<div style="clear:both"></div>
+
+<div id="footer">
+    <a href="projects.html" title="私人豪宅设计" target="_blank" rel="noopener noreferrer"><strong>私人豪宅设计</strong></a>
+    <a href="projects.html" title="私人公寓设计" target="_blank" rel="noopener noreferrer"><strong>私人公寓设计</strong></a>
+    <a href="projects.html" title="办公室设计" target="_blank" rel="noopener noreferrer"><strong>办公室设计</strong></a>
+    <a href="projects.html" title="商业空间设计" target="_blank" rel="noopener noreferrer"><strong>商业空间设计</strong></a>
+    <div style="color:#999; margin:10px 0; font-size:11px;">
+        <div style="float:left;">&copy; 2026 YiER-Studio 懿贰设计. All Rights Reserved.</div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
